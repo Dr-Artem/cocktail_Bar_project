@@ -1,0 +1,150 @@
+.hero {
+  padding-top: 60px;
+  padding-bottom: 40px;
+  padding-left: 20px;
+
+  @media screen and (min-width: $tablet) {
+    padding-top: 70px;
+    padding-bottom: 156px;
+  }
+
+  @media screen and (min-width: $desctop) {
+    padding-top: 37px;
+    padding-bottom: 60px;
+  }
+
+  &__title {
+    font-weight: var(--poppins-font-weight-600);
+    font-size: 22px;
+    line-height: 1.9;
+  
+    color: var(--accent-text-color);
+  
+    margin-bottom: 28px;
+    margin-right: 20px;
+    
+  
+    @media screen and (min-width: $tablet) {
+      font-size: 52px;
+      line-height: 1.5;
+  
+      margin-bottom: 40px;
+    }
+  
+    @media screen and (min-width: $desctop) {
+      font-size: 52px;
+      line-height: 1.6;
+  
+      margin-bottom: 36px;
+    }
+  }
+}
+
+.hero__wrapper {
+    display: block;
+    min-width: 300px;
+    height: 367px;
+    
+    margin-bottom: 28px;
+
+  &__img {
+    box-sizing: border-box;
+    margin-bottom: 28px;
+  }
+}
+
+.hero-text{
+font-weight: var(--poppins-font-weight-500);
+font-size: 14px;
+line-height: 2;
+letter-spacing: 0.02em;
+
+color: #000000;
+
+text-align: center;
+margin-right: 20px;
+margin-bottom: 20px;
+}
+
+.ABC-search{
+    width: 93px;
+    height: 34px;
+
+    border: 1px solid var(--accent-text-color);
+    border-radius: 4px;
+    background-color: inherit;
+    padding: 6px 46px 6px 10px;
+
+    // margin-left: auto;
+    // margin-right: auto;
+    display: block;
+}
+
+.dropdown {
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%);
+
+    &:hover .dropdown__content {
+      display: block;
+    }
+
+    &__btn{
+        position: absolute;
+        top: 5px;
+        right: 8px;
+        width: 24px;
+        height: 24px;
+
+
+        background-color: inherit;
+        border: none;
+
+        &__icon{
+            width: 13px;
+            height: 8px;
+        }
+    }
+  
+    &__content {
+      width: 93px;
+      height: 84px;
+  
+      border: 1px solid var(--accent-text-color);
+      border-radius: 4px;
+      background-color: inherit;
+  
+      display: none;
+      position: absolute;
+      z-index: 1;
+      overflow: scroll;
+    //   scrollbar-color: grey;
+    //   scrollbar-width: 1.4px;
+  
+    //   &::-webkit-scrollbar{
+  
+  
+    //       color: rgb(56, 10, 10);
+    //       scrollbar-color: rgb(54, 157, 34);
+    //   }
+    }
+  }
+  
+  .btn-ABC {
+      text-align: start;
+  
+    width: 85px;
+    height: 28px;
+    padding: 4px 10px;
+    
+    background-color: inherit;
+  
+    display: block;
+    border: none;
+  
+    &:hover {
+      color: var(--accent-text-color);
+    }
+  }
+  
