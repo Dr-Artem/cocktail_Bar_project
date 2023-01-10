@@ -1,3 +1,7 @@
+// .ingredient {
+//   padding-top: 40px;
+// }
+
 .ingredient__title {
   font-style: normal;
   font-family: var(--roboto-alternate-family);
@@ -5,9 +9,9 @@
   font-weight: 900;
   font-size: 32px;
   line-height: 1.18;
+  padding-top: 40px;
 
   color: var(--main-color);
-  margin-top: 40px;
   margin-left: 20px;
   @media screen and (min-width: $tablet) and (max-width: $pre-desctop) {
     margin-left: 28px;
@@ -70,42 +74,6 @@
   }
 }
 
-.ingredient-list {
-  font-weight: var(--poppins-font-weight-400);
-  font-style: normal;
-  font-size: 16px;
-  line-height: 1.62;
-
-  color: var(--alternative-text-color);
-
-  margin-top: 29px;
-  margin-left: 16px;
-  margin-right: 38px;
-  @media screen and (min-width: $tablet) and (max-width: $pre-desctop) {
-    margin-top: 28px;
-    margin-left: 28px;
-  }
-  @media screen and (min-width: $desctop) {
-    margin-top: 34px;
-    margin-left: 28px;
-  }
-  &__item:hover,
-  &__item:focus {
-    color: var(--accent-button-color);
-    cursor: pointer;
-  }
-}
-
-.ingredient-list__item::before {
-  content: '✶';
-  color: var(--main-color);
-  margin-right: 4px;
-}
-
-.ingredient-list__item:hover::before {
-  color: var(--accent-button-color);
-}
-
 .ingredient__btn {
   font-family: var(--roboto-alternate-family);
   font-style: normal;
@@ -147,3 +115,51 @@
     justify-content: flex-end;
   }
 }
+
+.ingredient-btn__close {
+  background-color: inherit;
+  border: none;
+  position: absolute;
+  top: 16;
+  right: 16;
+  @media screen and (min-width: $tablet) {
+    top: 12;
+    right: 12;
+  }
+}
+
+// .ingredient-list {
+//   font-weight: var(--poppins-font-weight-400);
+//   font-style: normal;
+//   font-size: 16px;
+//   line-height: 1.62;
+
+//   color: var(--alternative-text-color);
+
+//   margin-top: 29px;
+//   margin-left: 16px;
+//   margin-right: 38px;
+//   @media screen and (min-width: $tablet) and (max-width: $pre-desctop) {
+//     margin-top: 28px;
+//     margin-left: 28px;
+//   }
+//   @media screen and (min-width: $desctop) {
+//     margin-top: 34px;
+//     margin-left: 28px;
+//   }
+//   &__item:hover,
+//   &__item:focus {
+//     color: var(--accent-button-color);
+//     cursor: pointer;
+//   }
+// }
+
+// .ingredient-list__item::before {
+//   content: '✶';
+//   color: var(--main-color);
+//   margin-right: 4px;
+// }
+
+// .ingredient-list__item:hover::before {
+//   color: var(--accent-button-color);
+// }

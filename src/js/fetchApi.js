@@ -1,4 +1,4 @@
-// import axios from 'axios';
+import axios from 'axios';
 
 // export async function fetchApi(type, identificator, inputValue) {
 //   try {
@@ -21,12 +21,12 @@
 //     return response.json();
 //   });
 // }
-import axios from 'axios';
+// import axios from 'axios';
 
 export async function fetchApi(type, identificator, inputValue) {
   try {
     const response = await axios.get(
-      `https://www.thecocktaildb.com/api/json/v1/1/search.php?i=campari
+      `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
 
 `
     );
