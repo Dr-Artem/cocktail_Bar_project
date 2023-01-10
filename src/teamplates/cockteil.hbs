@@ -1,0 +1,16 @@
+{{#each this}}
+  <div class='cocktail-box'>
+    <img
+      class='cocktail-box__img img'
+      src='{{strDrinkThumb}}/preview'
+      alt='{{strDrink}}'
+    />
+    <div class='buttons-box'>
+      <h3 class='cocktail-box__cocktail-name'>{{strDrink}}</h3>
+      <div class='buttons'>
+        <button class='buttons__learn-more' id='{{idDrink}}'>Learn more</button>
+        <button class='buttons__add-to'>Add to</button>
+      </div>
+    </div>
+  </div>
+{{/each}}

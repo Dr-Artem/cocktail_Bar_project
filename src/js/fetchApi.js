@@ -10,6 +10,7 @@ export async function fetchApi(type, identificator, inputValue) {
     console.log(error);
   }
 }
+// www.thecocktaildb.com / api / json / v1 / 1 / random.php;
 
 // export function fetchApi(type, identificator, drink) {
 //   return fetch(
