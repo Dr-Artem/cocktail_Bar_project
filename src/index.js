@@ -8,6 +8,7 @@ let inputValue = '';
 let identificator = '';
 let type = '';
 
+
 async function getDrink() {
   const data = await fetchApi(type, identificator, inputValue);
   console.log(data);
