@@ -1,0 +1,15 @@
+{{#each this}}
+  <li class='fav-ingredients__item'>
+    <h2 class='item__title'>{{strIngredient}}</h2>
+    <p class='item__text'>{{strType}}</p>
+    <div class='fav-list__btn__wrapper'>
+      <button class='item__btn1'>Learn more</button>
+      <button class='item__btn2'>
+        Remove
+        <svg class='fav-svg__icon__heart' width='18' height='18'>
+          <use href='./img/icon/spite.svg#icon-heart'></use>
+        </svg>
+      </button>
+    </div>
+  </li>
+{{/each}}
