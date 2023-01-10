@@ -120,6 +120,10 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
+  &:hover,
+  &:focus {
+    color: var(--accent-text-color);
+  }
 }
 
 .ingridients__decoration {
@@ -147,7 +151,32 @@
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
+  &:hover,
+  &:focus {
+    background-color: var(--accent-button-color);
+  }
   @media screen and (min-width: $tablet) {
     justify-content: flex-end;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  display: flex;
+  right: 0;
+  top: 0;
+  margin-top: 23px;
+  margin-right: 23px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    fill: var(--accent-text-color);
+  }
+
+  @media screen and (min-width: $tablet) {
+    margin-top: 19px;
+    margin-right: 19px;
   }
 }
