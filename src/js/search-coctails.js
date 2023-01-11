@@ -138,5 +138,7 @@ async function onBtnPaginationCoctails(evt) {
   }
 }
 
+// console.log(`a`);
+
 formEl.addEventListener('submit', onFormSearchCoctails);
 divForBtnsEl.addEventListener('click', onBtnPaginationCoctails);
