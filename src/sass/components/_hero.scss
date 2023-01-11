@@ -211,6 +211,8 @@
     display: block;
     border: none;
 
+    transition: color var(--general-transition-effect);
+
     &:hover,
     &:focus {
       color: var(--accent-text-color);
@@ -229,6 +231,7 @@
   line-height: 1.5;
   align-items: center;
   text-align: center;
+  transition: color var(--general-transition-effect);
 
   color: var(--alternative-text-color);
 
