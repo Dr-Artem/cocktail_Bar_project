@@ -1,118 +1,34 @@
-
-<section class="section hero">
-  <div class="container hero">
+<section class="section-hero">
+  <div class="hero">
     <h1 class="hero__title">
       A party without cocktails <br />
       is not like a party
     </h1>
+    <div class="baner-wrapper"></div>
+    <p class="hero__text">Search your favorite cocktail by ABC</p>
+    <div class="ABC-search">
+      <ul class="ABC-search__letters"></ul>
+      <ul class="ABC-search__numbers"></ul>
+    </div>
 
-    <picture class="hero__wrapper">
-      <source
-        media="(max-width: 767.98px)"
-        type="image/webp"
-        srcset="
-          ./img/hero/delicious-sangria-cocktail-held-in-hand-480.webp    1x,
-          ./img/hero/delicious-sangria-cocktail-held-in-hand-480@2x.webp 2x
-        "
-      />
-
-      <source
-        media="(max-width: 767.98px)"
-        type="image/png"
-        srcset="
-          ./img/hero/delicious-sangria-cocktail-held-in-hand-480.png    1x,
-          ./img/hero/delicious-sangria-cocktail-held-in-hand-480@2x.png 2x
-        "
-      />
-
-      <source
-        media="(min-width: 1280px)"
-        type="image/webp"
-        srcset="
-          ./img/hero/delicious-sangria-cocktail-held-in-hand-1280.webp    1x,
-          ./img/hero/delicious-sangria-cocktail-held-in-hand-1280@2x.webp 2x
-        "
-      />
-
-      <source
-        media="(min-width: 1280px)"
-        type="image/png"
-        srcset="
-          ./img/hero/delicious-sangria-cocktail-held-in-hand-1280.png    1x,
-          ./img/hero/delicious-sangria-cocktail-held-in-hand-1280@2x.png 2x
-        "
-      />
-
-      <source
-        media="(min-width: 768px)"
-        type="image/webp"
-        srcset="
-          ./img/hero/delicious-sangria-cocktail-held-in-hand-768.webp    1x,
-          ./img/hero/delicious-sangria-cocktail-held-in-hand-768@2x.webp 2x
-        "
-      />
-
-      <source
-        media="(min-width: 768px)"
-        type="image/png"
-        srcset="
-          ./img/hero/delicious-sangria-cocktail-held-in-hand-768.png    1x,
-          ./img/hero/delicious-sangria-cocktail-held-in-hand-768@2x.png 2x
-        "
-      />
-
-      <img class="hero__wrapper__img"
-        src="./img/hero/delicious-sangria-cocktail-held-in-hand-1280.png"
-        alt="delicious sangria cocktail held in hand"
-      />
-    </picture>
-
-    <p class="hero-text">Search your favorite cocktail by ABC</p>
-    
-    <div class="dropdown">
-        <input class="ABC-search" type="text" name="ABC-search" id="input-search" required/>
-               <button class="dropdown__btn" type="button">
-                <svg class="dropdown__btn__icon">
-                    <use href="./img/icon/spite.svg#icon-v"></use>
-                  </svg>
-               </button>
-               <div class="dropdown__content">
-                 <button class="btn-ABC" type="submit">A</button>
-                 <button class="btn-ABC" type="submit">C</button>
-                 <button class="btn-ABC" type="submit">B</button>
-                 <button class="btn-ABC" type="submit">D</button>
-                 <button class="btn-ABC" type="submit">E</button>
-                 <button class="btn-ABC" type="submit">F</button>
-                 <button class="btn-ABC" type="submit">G</button>
-                 <button class="btn-ABC" type="submit">H</button>
-                 <button class="btn-ABC" type="submit">I</button>
-                 <button class="btn-ABC" type="submit">J</button>
-                 <button class="btn-ABC" type="submit">K</button>
-                 <button class="btn-ABC" type="submit">L</button>
-                 <button class="btn-ABC" type="submit">M</button>
-                 <button class="btn-ABC" type="submit">N</button>
-                 <button class="btn-ABC" type="submit">O</button>
-                 <button class="btn-ABC" type="submit">P</button>
-                 <button class="btn-ABC" type="submit">Q</button>
-                 <button class="btn-ABC" type="submit">R</button>
-                 <button class="btn-ABC" type="submit">S</button>
-                 <button class="btn-ABC" type="submit">T</button>
-                 <button class="btn-ABC" type="submit">U</button>
-                 <button class="btn-ABC" type="submit">V</button>
-                 <button class="btn-ABC" type="submit">W</button>
-                 <button class="btn-ABC" type="submit">X</button>
-                 <button class="btn-ABC" type="submit">Y</button>
-                 <button class="btn-ABC" type="submit">Z</button>
-                 <button class="btn-ABC" type="submit">1</button>
-                 <button class="btn-ABC" type="submit">2</button>
-                 <button class="btn-ABC" type="submit">3</button>
-                 <button class="btn-ABC" type="submit">4</button>
-                 <button class="btn-ABC" type="submit">5</button>
-                 <button class="btn-ABC" type="submit">6</button>
-                 <button class="btn-ABC" type="submit">7</button>
-                 <button class="btn-ABC" type="submit">8</button>
-                 <button class="btn-ABC" type="submit">9</button>
-                 <button class="btn-ABC" type="submit">0</button>
-               </div>
+    <div class="dropdown-wrapper">
+      <div class="dropdown">
+        <input
+          class="ABC-input"
+          type="text"
+          name="ABC-search"
+          id="input-search"
+          placeholder="A"
+          value=""
+          required
+        />
+        <button class="dropdown__btn" type="button">
+          <svg class="dropdown__btn__icon">
+            <use href="./img/icon/spite.svg#icon-v"></use>
+          </svg>
+        </button>
+        <div class="dropdown__content"></div>
+      </div>
+    </div>
   </div>
 </section>
