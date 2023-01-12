@@ -2,6 +2,10 @@ import { fetchApi } from './js/fetchApi';
 import Notiflix from 'notiflix';
 import card from './templates/renderCocktailCards.hbs';
 
+// import * as creatAlphabet from './js/creat-alphabet';
+// import * as abcSearch from './js/abc-search';
+// import * as inputAbcSearch from './js/input-abc-search';
+
 const mainSection = document.querySelector('.cocktail');
 
 let inputValue = '';
