@@ -8,25 +8,23 @@ let inputValue = '';
 let identificator = '';
 let type = '';
 
-// async function getDrink() {
-//   const data = await fetchApi(type, identificator, inputValue);
-//   console.log(data);
+async function getDrink() {
+  const data = await fetchApi(type, identificator, inputValue);
+  console.log(data);
 
-//   try {
-//     if (type === 'random') {
-//       mainSection.insertAdjacentHTML('beforeend', card(data.drinks));
-//     }
-//   } catch (err) {
-//     console.log(err);
-//   }
-// }
+  try {
+    mainSection.insertAdjacentHTML('beforeend', card(data.drinks));
+  } catch (err) {
+    console.log(err);
+  }
+}
 
-// function getRandomDrink(n) {
-//   inputValue = '';
-//   identificator = '';
-//   type = 'random';
-//   for (let i = 1; i <= n; i++) {
-//     getDrink();
-//   }
-// }
-// getRandomDrink(9);
+function getRandomDrink(n) {
+  inputValue = '';
+  identificator = '';
+  type = 'random';
+  for (let i = 1; i <= n; i++) {
+    getDrink();
+  }
+}
+getRandomDrink(9);
