@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+
 export async function fetchApi(type, identificator, inputValue) {
   try {
     const response = await axios.get(
