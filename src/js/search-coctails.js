@@ -5,6 +5,8 @@ import card from '../templates/renderCocktailCards.hbs';
 const mainSection = document.querySelector('.cocktail');
 const formEl = document.querySelector(`.header__search-form`);
 const divForBtnsEl = document.querySelector('.coctail-btn__wrapper');
+const modalBackdrop = document.querySelector('.backdrop');
+const modalIngridientBackdrop = document.querySelector('.backdrop-ingridient');
 
 let inputValue = '';
 let identificator = '';
