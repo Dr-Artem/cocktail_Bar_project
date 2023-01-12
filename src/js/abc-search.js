@@ -19,7 +19,7 @@ let type = '';
 refs.btnAbc.addEventListener('click', onAlphabetClick);
 
 async function onAlphabetClick(e) {
-  e.preventDefault;
+  e.preventDefault();
   refs.mainSection.innerHTML = '';
 
   const letter = e.target.textContent;
