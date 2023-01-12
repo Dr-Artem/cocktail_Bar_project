@@ -1,10 +1,12 @@
-import { fetchApi } from '../js/fetchApi';
+import { fetchApi } from './fetchApi';
 import Notiflix from 'notiflix';
 import card from '../templates/renderCocktailCards.hbs';
 
 const mainSection = document.querySelector('.cocktail');
-const formEl = document.querySelector(`form`);
+const formEl = document.querySelector(`.header__search-form`);
 const divForBtnsEl = document.querySelector('.coctail-btn__wrapper');
+const modalBackdrop = document.querySelector('.backdrop');
+const modalIngridientBackdrop = document.querySelector('.backdrop-ingridient');
 
 let inputValue = '';
 let identificator = '';
@@ -13,7 +15,7 @@ let type = '';
 async function onFormSearchCoctails(evt) {
   evt.preventDefault();
 
-  inputValue = document.querySelector('input').value;
+  inputValue = document.querySelector('.header__search-form-input').value;
   identificator = 's=';
   type = 'search';
 

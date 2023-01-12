@@ -7,8 +7,9 @@ const backdropIngridient = document.querySelector('.backdrop-ingridient');
 
 const modalWindow = document.querySelector('[data-modal]');
 const modalWindowIngridient = document.querySelector('[data-ingridient]');
+const modal = document.querySelector('[data-modal]');
 
-export function openModalWindow(el) {
+function openModalWindow(el) {
   let inputValue = el.target.name;
   let identificator = 's=';
   let type = 'search';
@@ -38,13 +39,12 @@ export function openModalWindow(el) {
       backdrop.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
     })
-    // https://www.thecocktaildb.com/api/json/v1/1/search.php?i=${ingridient}
     .catch(error => {
       console.log(error);
     });
 }
 
-export function closeModalWindow(el) {
+function closeModalWindow(el) {
   if (el.target.className.animVal !== 'button__icon') {
     return;
   }
@@ -53,12 +53,15 @@ export function closeModalWindow(el) {
   backdrop.classList.add('hidden');
 }
 
-export function openIngridientModalWindow(el) {
+function openIngridientModalWindow(el) {
   let inputValue = el.target.name;
   let identificator = 'i=';
   let type = 'search';
   fetchApi(type, identificator, inputValue).then(response => {
     if (el.target.nodeName !== 'A') {
+      return;
+    }
+    if (!response.ingredients[0].strDescription) {
       return;
     }
 
@@ -70,7 +73,7 @@ export function openIngridientModalWindow(el) {
   });
 }
 
-export function closeIngridientModalWindow(el) {
+function closeIngridientModalWindow(el) {
   if (
     el.target.className.animVal !== 'button__icon__ingredient' &&
     el.target.className !== 'backdrop-ingridient'
@@ -82,3 +85,8 @@ export function closeIngridientModalWindow(el) {
   backdrop.classList.remove('hidden');
   backdropIngridient.classList.add('hidden');
 }
+
+modal.addEventListener('click', closeModalWindow);
+modal.addEventListener('click', openIngridientModalWindow);
+document.body.addEventListener('click', openModalWindow);
+backdropIngridient.addEventListener('click', closeIngridientModalWindow);

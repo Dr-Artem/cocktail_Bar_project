@@ -1,18 +1,14 @@
 {{#each this}}
-  <div class='ingredient__title__wrapper'>
-    <h1 class='ingredient__title'>{{strIngredient}}</h1>
-    <h2 class='ingredient__subtitle'>{{strType}}</h2>
+  <div>
+    <div class='ingredient__title__wrapper'>
+      <h1 class='ingredient__title'>{{strIngredient}}</h1>
+      <h2 class='ingredient__subtitle'>{{strType}}</h2>
+    </div>
+    <p class='ingredient__text'>
+      <span class='ingredient__text__span'>{{strIngredient}}</span>
+      {{strDescription}}
+    </p>
   </div>
-  <p class='ingredient__text'>
-    <span class='ingredient__text__span'>{{strIngredient}}</span>
-    {{strDescription}}
-  </p>
-  <ul>
-    <li>✶ Type: Bitters </li>
-    <li>✶ Country of origin: Italy</li>
-    <li>✶ Alcohol by volume: 20.5–28.5% </li>
-    <li>✶ Flavour: Bitter, spicy and sweet</li>
-  </ul>
   <div class='btn__wrapper'>
     <button class='ingredient__btn'>Add to favorite</button>
     <button class='ingredient__btn hidden'>Remove from favorite</button>
