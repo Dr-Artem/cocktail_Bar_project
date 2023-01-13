@@ -2,29 +2,33 @@ import { fetchApi } from './js/fetchApi';
 import Notiflix from 'notiflix';
 import card from './templates/renderCocktailCards.hbs';
 
-const mainSection = document.querySelector('.cocktail');
+// import * as creatAlphabet from './js/creat-alphabet';
+// import * as abcSearch from './js/abc-search';
+// import * as inputAbcSearch from './js/input-abc-search';
 
-let inputValue = '';
-let identificator = '';
-let type = '';
+// const mainSection = document.querySelector('.cocktail');
 
-async function getDrink() {
-  const data = await fetchApi(type, identificator, inputValue);
-  console.log(data);
+// let inputValue = '';
+// let identificator = '';
+// let type = '';
 
-  try {
-    mainSection.insertAdjacentHTML('beforeend', card(data.drinks));
-  } catch (err) {
-    console.log(err);
-  }
-}
+// async function getDrink() {
+//   const data = await fetchApi(type, identificator, inputValue);
+//   console.log(data);
 
-function getRandomDrink(n) {
-  inputValue = '';
-  identificator = '';
-  type = 'random';
-  for (let i = 1; i <= n; i++) {
-    getDrink();
-  }
-}
-getRandomDrink(9);
+//   try {
+//     mainSection.insertAdjacentHTML('beforeend', card(data.drinks));
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
+
+// function getRandomDrink(n) {
+//   inputValue = '';
+//   identificator = '';
+//   type = 'random';
+//   for (let i = 1; i <= n; i++) {
+//     getDrink();
+//   }
+// }
+// getRandomDrink(9);

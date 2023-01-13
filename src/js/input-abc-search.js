@@ -17,7 +17,7 @@ refs.inputBtn.addEventListener('click', onInputClick);
 refs.btnDropdown.addEventListener('click', onbtnDropdownClick);
 
 function onInputClick(e) {
-  e.preventDefault;
+  e.preventDefault();
   refs.btnDropdown.style.display = 'block';
 }
 

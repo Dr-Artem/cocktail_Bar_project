@@ -1,155 +1,169 @@
-.cocktail {
-  text-align: -webkit-center;
 
-  @media screen and (min-width: $tablet) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 32px;
-  }
+ .cocktail {
+ 	//   text-align: -webkit-center;
 
-  @media screen and (min-width: $desctop) {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
+ 	@media screen and (min-width: $tablet) {
+ 		display: flex;
+ 		flex-wrap: wrap;
+ 		justify-content: center;
+ 		gap: 32px;
+ 	}
 
-    font-size: 32px;
-    line-height: 1.19;
-  }
+ 	@media screen and (min-width: $desctop) {
+ 		font-size: 32px;
+ 		line-height: 1.19;
+ 		// max-width: 395px;
+ 		height: 560px;
+ 	}
+ }
+.cocktail__list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 32px;
 }
 
-.cocktail-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
+.cocktail__item {
+	flex-basis: 100%;
+	border: 1px solid #fd5103;
+	border-radius: 4px;
+	// display: flex;
+	// flex-direction: column;
+	@media screen and (min-width: $tablet) {
+		flex-basis: calc((100% - 32px) / 2);
+	}
+	@media screen and (min-width: $desctop) {
+		flex-basis: calc((100% - 32px * 2) / 3);
+	}
+}
+.cocktail__img-wrapper {
+	margin-bottom: 40px;
 
-  margin-bottom: 20px;
+	@media screen and (min-width: $tablet) {
+		margin-bottom: 20px;
+	}
+}
+.cocktail__img {
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
 
-  height: 450px;
-  max-width: 280px;
+.cocktail__content {
+	padding: 0 21px 24px 21px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex: 1 0 auto;
+	@media screen and (min-width: $tablet) {
+		padding: 0 20px 20px;
+	}
+	@media screen and (min-width: $tablet) {
+		padding: 0 28px 28px;
+	}
+}
 
-  border: 1px solid var(--accent-text-color);
-  border-radius: 4px;
+.cocktail__name {
+	font-family: "Roboto";
+	font-weight: 900;
+	font-size: 26px;
+	line-height: 42px;
+	text-align: center;
 
-  font-family: 'Roboto';
-  font-weight: 900;
-  font-size: 26px;
-  line-height: 1.61;
+	margin-bottom: 16px;
 
-  @media screen and (min-width: $tablet) {
-    font-size: 28px;
-    line-height: 1.18;
-    max-width: 350px;
-    height: 545px;
-    margin-bottom: 0;
-  }
-
-  @media screen and (min-width: $desctop) {
-    font-size: 32px;
-    line-height: 1.19;
-    max-width: 396px;
-    height: 560px;
-  }
-
-  &__img {
-    @media screen and (min-width: $tablet) {
-      min-width: 335px;
-    }
-
-    @media screen and (min-width: $desctop) {
-      min-width: 394px;
-    }
-  }
-
-  &__cocktail-name {
-    margin-bottom: 16px;
-    text-align: center;
-  }
+	@media screen and (min-width: $tablet) {
+		font-size: 28px;
+		line-height: 33px;
+		margin-bottom: 25px;
+	}
+	@media screen and (min-width: $desctop) {
+		font-size: 32px;
+		line-height: 38px;
+		margin-bottom: 27px;
+	}
 }
 
 .buttons {
-  display: flex;
-  padding-bottom: 24px;
-  justify-content: space-around;
+	display: flex;
+	// justify-content: space-around;
 
-  @media screen and (min-width: $tablet) {
-    justify-content: center;
-  }
+	@media screen and (min-width: $tablet) {
+		// justify-content: center;
+	}
 
-  &__learn-more,
-  &__add-to {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 110px;
-    height: 40px;
+	&__learn-more,
+	&__add-to {
+		// display: flex;
+		// align-items: center;
+		// justify-content: center;
+		// width: 110px;
+		height: 40px;
 
-    font-family: var(--roboto-alternate-family);
-    font-size: 14px;
-    line-height: 1.71;
-    color: var(--accent-text-color);
-    letter-spacing: 0.02em;
+		font-family: var(--roboto-alternate-family);
+		font-size: 14px;
+		line-height: 1.71;
+		color: var(--accent-text-color);
+		letter-spacing: 0.02em;
 
-    background: none;
+		background: none;
 
-    border: 1px solid var(--accent-text-color);
-    border-radius: 4px;
-  }
+		border: 1px solid var(--accent-text-color);
+		border-radius: 4px;
+	}
 
-  &__learn-more {
-    color: var(--main-white-color);
-    background-color: var(--accent-text-color);
+	&__learn-more {
+		color: var(--main-white-color);
+		background-color: var(--accent-text-color);
 
-    @media screen and (min-width: $tablet) {
-      width: 160px;
-      height: 50px;
-      margin-right: 12px;
-    }
+		@media screen and (min-width: $tablet) {
+			// width: 160px;
+			// height: 50px;
+			// margin-right: 12px;
+		}
 
-    @media screen and (min-width: $desctop) {
-      width: 185px;
-      margin-right: 16px;
-    }
-  }
+		@media screen and (min-width: $desctop) {
+			// width: 185px;
+			// margin-right: 16px;
+		}
+	}
 
-  &__add-to {
-    @media screen and (min-width: $tablet) {
-      width: 125px;
-      height: 50px;
-    }
+	&__add-to {
+		@media screen and (min-width: $tablet) {
+			width: 125px;
+			height: 50px;
+		}
 
-    @media screen and (min-width: $desctop) {
-      width: 145px;
-    }
+		@media screen and (min-width: $desctop) {
+			width: 145px;
+		}
 
-    &__img {
-      width: 21px;
-      height: 19px;
+		&__img {
+			width: 21px;
+			height: 19px;
 
-      margin-left: 4px;
-    }
-  }
+			margin-left: 4px;
+		}
+	}
 
-  &__learn-more:hover,
-  &__learn-more:focus {
-    background: #fe7031;
-    border-radius: 4px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  }
-  &__learn-more:active {
-    border: none;
-    color: var(--accent-text-color);
-    background-color: var(--main-white-color);
-    filter: none;
-  }
+	&__learn-more:hover,
+	&__learn-more:focus {
+		background: #fe7031;
+		border-radius: 4px;
+		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	}
+	&__learn-more:active {
+		border: none;
+		color: var(--accent-text-color);
+		background-color: var(--main-white-color);
+		filter: none;
+	}
 
-  &__add-to:hover,
-  &__add-to:focus {
-    border: 2px solid var(--accent-text-color);
-  }
-  &__add-to:active {
-    background-color: var(--main-white-color);
-    border: 1px solid var(--accent-text-color);
-  }
+	&__add-to:hover,
+	&__add-to:focus {
+		border: 2px solid var(--accent-text-color);
+	}
+	&__add-to:active {
+		background-color: var(--main-white-color);
+		border: 1px solid var(--accent-text-color);
+	}
 }
