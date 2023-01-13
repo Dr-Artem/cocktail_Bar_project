@@ -66,6 +66,7 @@ async function getCoctails() {
 function inputChange(element) {
   inputValue = element;
   refs.inputDropdown.value = element;
+
   refs.inputDropdown.style.backgroundColor = 'var(--accent-text-color)';
   refs.inputDropdown.style.color = 'var(--main-white-color)';
   refs.icon.style.fill = 'var(--main-white-color)';

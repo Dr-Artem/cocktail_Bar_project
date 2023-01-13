@@ -3,7 +3,11 @@ import Notiflix from 'notiflix';
 import renderCocktailCards from '../templates/renderCocktailCards.hbs';
 
 const mainSection = document.querySelector('.cocktail__list');
-const formEl = document.querySelector(`.header__search-form`);
+const formCurrent = document.querySelector(`.form-current`);
+const formHide = document.querySelector(`.form-hide`);
+const formCurrentValue = document.querySelector('.form-current__input');
+const formHideValue = document.querySelector('.form-hide__input');
+
 // const divForBtnsEl = document.querySelector('.coctail-btn__wrapper');
 // const modalBackdrop = document.querySelector('.backdrop');
 // const modalIngridientBackdrop = document.querySelector('.backdrop-ingridient');
@@ -14,8 +18,13 @@ let type = '';
 
 async function onFormSearchCoctails(evt) {
   evt.preventDefault();
+  if (evt.target === formCurrent) {
+    inputValue = formCurrentValue.value;
+  }
+  if (evt.target === formHide) {
+    inputValue = formHideValue.value;
+  }
 
-  inputValue = document.querySelector('.header__search-form-input').value;
   identificator = 's=';
   type = 'search';
 
@@ -106,7 +115,9 @@ async function onFormSearchCoctails(evt) {
   }
 }
 
-formEl.addEventListener('submit', onFormSearchCoctails);
+formCurrent.addEventListener('submit', onFormSearchCoctails);
+formHide.addEventListener('submit', onFormSearchCoctails);
+
 // divForBtnsEl.addEventListener('click', onBtnPaginationCoctails);
 
 // async function onFormSearchCoctails(evt) {

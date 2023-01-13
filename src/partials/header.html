@@ -33,9 +33,9 @@
           alt="page-logo"
         /> </picture
     ></a>
-    <form class="header__search-form-2" id="header__search-form">
-      <button class="header__search-form-button-2" type="submit">
-        <svg class="menu__serch-icon-2" viewBox="0 0 32 32">
+    <form class="header__search-form form-hide">
+      <button class="header__search-form-button" type="submit">
+        <svg class="menu__serch-icon" viewBox="0 0 32 32">
           <path
             fill="#fd5103"
             style="fill: var(--color1, #fd5103)"
@@ -44,7 +44,7 @@
         </svg>
       </button>
       <input
-        class="header__search-form-input-2"
+        class="header__search-form-input form-hide__input"
         type="text"
         autocomplete="off"
         placeholder="Search..."
@@ -82,7 +82,7 @@
             </li>
           </ul>
         </nav>
-        <form class="header__search-form" id="header__search-form">
+        <form class="header__search-form form-current" id="header__search-form">
           <button class="header__search-form-button" type="submit">
             <svg class="menu__serch-icon" viewBox="0 0 32 32">
               <path
@@ -93,7 +93,7 @@
             </svg>
           </button>
           <input
-            class="header__search-form-input"
+            class="header__search-form-input form-current__input"
             type="text"
             autocomplete="off"
             placeholder="Search..."

@@ -1,18 +1,9 @@
 .cocktail {
-	//   text-align: -webkit-center;
-
 	@media screen and (min-width: $tablet) {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 		gap: 32px;
-	}
-
-	@media screen and (min-width: $desctop) {
-		font-size: 32px;
-		line-height: 1.19;
-		// max-width: 395px;
-		// height: 560px;
 	}
 }
 .cocktail__list {
@@ -20,19 +11,25 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 32px;
+	width: 100%;
 }
 
 .cocktail__item {
 	flex-basis: 100%;
 	border: 1px solid #fd5103;
 	border-radius: 4px;
-	// display: flex;
-	// flex-direction: column;
+	display: flex;
+	flex-direction: column;
 	@media screen and (min-width: $tablet) {
 		flex-basis: calc((100% - 32px) / 2);
 	}
 	@media screen and (min-width: $desctop) {
 		flex-basis: calc((100% - 32px * 2) / 3);
+	}
+}
+.cocktail__item:not(:last-child) {
+	@media screen and (max-width: $pre-tablet) {
+		margin: 0 0 20px 0;
 	}
 }
 .cocktail__img-wrapper {
@@ -57,7 +54,7 @@
 	@media screen and (min-width: $tablet) {
 		padding: 0 20px 20px;
 	}
-	@media screen and (min-width: $tablet) {
+	@media screen and (min-width: $desctop) {
 		padding: 0 28px 28px;
 	}
 }
@@ -86,87 +83,85 @@
 .buttons {
 	display: flex;
 	justify-content: space-between;
+}
+
+.buttons__learn-more,
+.buttons__add-to {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 110px;
+	width: 100%;
+	padding: 8px 0;
+	cursor: pointer;
+	border-radius: 4px;
+	border: none;
+
+	font-family: var(--roboto-alternate-family);
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 1.71;
+	letter-spacing: 0.02em;
+}
+
+.buttons__learn-more {
+	background-color: var(--accent-button-color);
+	outline: 1px solid #fe7031;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	color: var(--main-white-color);
 
 	@media screen and (min-width: $tablet) {
-		// justify-content: center;
+		max-width: 160px;
+		padding: 12px 0;
+		font-size: 20px;
+		line-height: 24px;
 	}
 
-	&__learn-more,
-	&__add-to {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		max-width: 110px;
-		width: 100%;
-		padding: 8px 0;
-		// height: 40px;
+	@media screen and (min-width: $desctop) {
+		max-width: 182px;
+	}
+}
+.buttons__learn-more:hover,
+.buttons__learn-more:focus {
+	background-color: var(--main-white-color);
+	color: var(--accent-text-color);
+	outline: none;
+	filter: none;
+}
+.buttons__learn-more:active {
+	color: var(--main-white-color);
+	background-color: var(--accent-text-color);
+}
 
-		font-family: var(--roboto-alternate-family);
-		font-size: 14px;
-		line-height: 1.71;
-		// color: var(--accent-text-color);
-		letter-spacing: 0.02em;
+.buttons__add-to {
+	background-color: transparent;
+	outline: 2px solid var(--accent-text-color);
+	color: var(--accent-text-color);
 
-		background: none;
-
-		outline: 2px solid var(--accent-text-color);
-		border-radius: 4px;
+	@media screen and (min-width: $tablet) {
+		max-width: 123px;
+		padding: 12px 0;
+		font-size: 20px;
+		line-height: 24px;
 	}
 
-	&__learn-more {
-		border: none;
-		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-		color: var(--main-white-color);
-		background-color: var(--accent-button-color);
-
-		@media screen and (min-width: $tablet) {
-			max-width: 160px;
-			padding: 12px 0;
-		}
-
-		@media screen and (min-width: $desctop) {
-			max-width: 185px;
-		}
+	@media screen and (min-width: $desctop) {
+		max-width: 141px;
 	}
 
-	&__add-to {
-		border: none;
-		color: var(--accent-text-color);
-		@media screen and (min-width: $tablet) {
-			max-width: 125px;
-			padding: 12px 0;
-		}
+	&__img {
+		width: 21px;
+		height: 19px;
 
-		@media screen and (min-width: $desctop) {
-			max-width: 145px;
-		}
+		margin-left: 5px;
+	}
+}
 
-		&__img {
-			width: 21px;
-			height: 19px;
-
-			margin-left: 4px;
-		}
-	}
-
-	&__learn-more:hover,
-	&__learn-more:focus {
-		background-color: var(--main-white-color);
-		color: var(--accent-text-color);
-		border-radius: 4px;
-		filter: none;
-	}
-	&__learn-more:active {
-		color: var(--main-white-color);
-		background-color: var(--accent-text-color);
-	}
-
-	&__add-to:hover,
-	&__add-to:focus {
-		background-color: var(--main-white-color);
-		outline: 1px solid var(--accent-text-color);
-	}
-	&__add-to:active {
-		outline: 1px solid var(--accent-text-color);
-	}
+.buttons__add-to:hover,
+.buttons__add-to:focus {
+	background-color: var(--main-white-color);
+	outline: 1px solid var(--accent-text-color);
+}
+.buttons__add-to:active {
+	outline: 1px solid var(--accent-text-color);
 }

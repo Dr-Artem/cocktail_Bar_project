@@ -7,10 +7,10 @@ export const refs = {
   inputDropdown: document.querySelector('.ABC-input'),
   inputBtn: document.querySelector('.dropdown__btn'),
   btnDropdown: document.querySelector('.dropdown__content'),
+  btnContent: document.querySelectorAll('.dropdown__content__btn'),
   icon: document.querySelector('.dropdown__btn__icon'),
   mainSection: document.querySelector('.cocktail'),
-  failureMessage:
-    'We can`t find this cocktail, please choose another one',
+  failureMessage: 'We can`t find this cocktail, please choose another one',
   errorTitle: document.querySelector('.error-title'),
   errorImg: document.querySelector('.error-wrapper__img'),
   mainTitle: document.querySelector('.main-title'),
@@ -111,3 +111,8 @@ Notiflix.Notify.init({
     notiflixIconColor: '#FE7031',
   },
 });
+
+refs.btnContent.forEach(btn => {
+  btn.style.color = 'inherit';
+});
+refs.btnDropdown.style.backgroundColor = 'inherit';

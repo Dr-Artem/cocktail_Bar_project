@@ -1366,6 +1366,7 @@ body._lock {
   }
 }
 .buttons__add-to {
+  border: none;
   color: var(--accent-text-color);
 }
 @media screen and (min-width: 768px) {
@@ -1392,7 +1393,7 @@ body._lock {
           filter: none;
 }
 .buttons__learn-more:active {
-  color: var(--accent-text-color);
+  color: var(--main-white-color);
   background-color: var(--accent-text-color);
 }
 .buttons__add-to:hover, .buttons__add-to:focus {
