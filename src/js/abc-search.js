@@ -9,18 +9,25 @@ export const refs = {
   btnDropdown: document.querySelector('.dropdown__content'),
   icon: document.querySelector('.dropdown__btn__icon'),
   mainSection: document.querySelector('.cocktail'),
-  failureMessage: 'Unfortunately this cocktail is not-available',
+  failureMessage:
+    'We can`t find this cocktail, please choose another one',
+  errorTitle: document.querySelector('.error-title'),
+  errorImg: document.querySelector('.error-wrapper__img'),
+  mainTitle: document.querySelector('.main-title'),
+  ldsHeart: document.querySelector('.preloader'),
 };
 
 let inputValue = '';
 let identificator = '';
 let type = '';
+let timerId = '';
 
 refs.btnAbc.addEventListener('click', onAlphabetClick);
 
-async function onAlphabetClick(e) {
+function onAlphabetClick(e) {
   e.preventDefault();
   refs.mainSection.innerHTML = '';
+  hiddenTitle();
 
   const letter = e.target.textContent;
 
@@ -28,22 +35,68 @@ async function onAlphabetClick(e) {
   type = 'search';
   inputValue = letter;
 
+  preloader();
+
+  timerId = setTimeout(getCoctails, 2000);
+}
+
+clearTimeout(timerId);
+
+async function getCoctails() {
   const data = await fetchApi(type, identificator, inputValue);
   console.log(data);
 
   try {
+    preloader();
     refs.mainSection.insertAdjacentHTML('beforeend', card(data.drinks));
 
     if (!data.drinks) {
+      addTitle();
+      scrollTobottom();
       return Notiflix.Notify.failure(refs.failureMessage);
     }
 
     Notiflix.Notify.success(
-      'Hooray! We found' + ` ${data.drinks.length} ` + 'cocktails!'
+      'We found' + ` ${data.drinks.length} ` + 'cocktails for you!'
     );
+    scroll();
   } catch (err) {
     console.log(err);
   }
+}
+
+export function hiddenTitle() {
+  refs.errorTitle.classList.add('hidden');
+  refs.errorImg.classList.add('hidden');
+  refs.mainTitle.classList.remove('hidden');
+}
+
+export function addTitle() {
+  refs.errorTitle.classList.remove('hidden');
+  refs.errorImg.classList.remove('hidden');
+  refs.mainTitle.classList.add('hidden');
+}
+
+export function scroll() {
+  const { height: cardHeight } =
+    refs.mainSection.firstElementChild.getBoundingClientRect();
+
+  window.scrollBy({
+    top: cardHeight,
+    behavior: 'smooth',
+  });
+}
+
+export function scrollTobottom() {
+  const pageHeight = document.documentElement.clientHeight;
+  window.scrollBy({
+    top: pageHeight,
+    behavior: 'smooth',
+  });
+}
+
+export function preloader() {
+  refs.ldsHeart.classList.toggle('hidden');
 }
 
 Notiflix.Notify.init({

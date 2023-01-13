@@ -1,20 +1,21 @@
-// .cocktail {
-// 	//   text-align: -webkit-center;
 
-// 	@media screen and (min-width: $tablet) {
-// 		display: flex;
-// 		flex-wrap: wrap;
-// 		justify-content: center;
-// 		gap: 32px;
-// 	}
+ .cocktail {
+ 	//   text-align: -webkit-center;
 
-// 	@media screen and (min-width: $desctop) {
-// 		font-size: 32px;
-// 		line-height: 1.19;
-// 		// max-width: 395px;
-// 		height: 560px;
-// 	}
-// }
+ 	@media screen and (min-width: $tablet) {
+ 		display: flex;
+ 		flex-wrap: wrap;
+ 		justify-content: center;
+ 		gap: 32px;
+ 	}
+
+ 	@media screen and (min-width: $desctop) {
+ 		font-size: 32px;
+ 		line-height: 1.19;
+ 		// max-width: 395px;
+ 		height: 560px;
+ 	}
+ }
 .cocktail__list {
 	display: flex;
 	flex-wrap: wrap;
