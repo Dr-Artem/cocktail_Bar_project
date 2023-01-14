@@ -1,5 +1,5 @@
 {{#each this}}
-  <li class='cocktail__item'>
+  <li class='cocktail__item' id='{{idDrink}}'>
     <div class='cocktail__img-wrapper'>
       <img
         class='cocktail__img'
@@ -12,7 +12,7 @@
       <h3 class='cocktail__name'>{{strDrink}}</h3>
       <div class='buttons'>
         <button class='buttons__learn-more' name='{{strDrink}}'>Learn more</button>
-        <button class='buttons__add-to'>Add to
+        <button class='buttons__add-to' id='{{idDrink}}'>Add to
           <svg class='buttons__add-to__img' viewBox='0 0 36 32'>
             <path
               fill='#fd5103'

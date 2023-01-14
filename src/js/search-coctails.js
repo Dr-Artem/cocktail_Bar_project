@@ -35,7 +35,7 @@ async function onFormSearchCoctails(evt) {
   const data = await fetchApi(type, identificator, inputValue);
 
   let paginationData = data.drinks.slice(start, end);
-  console.log(paginationData);
+  //   console.log(paginationData);
 
   try {
     if (window.innerWidth >= 1280) {
@@ -117,6 +117,8 @@ async function onFormSearchCoctails(evt) {
 
 formCurrent.addEventListener('submit', onFormSearchCoctails);
 formHide.addEventListener('submit', onFormSearchCoctails);
+
+//   const addToBtn = document.querySelector('.buttons__add-to');
 
 // divForBtnsEl.addEventListener('click', onBtnPaginationCoctails);
 
