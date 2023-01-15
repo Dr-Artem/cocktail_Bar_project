@@ -5,6 +5,7 @@ import card from '../templates/renderCocktailCards.hbs';
 export const refs = {
   btnAbc: document.querySelector('.ABC-search'),
   inputDropdown: document.querySelector('.ABC-input'),
+  dropdown: document.querySelector('.dropdown'),
   inputBtn: document.querySelector('.dropdown__btn'),
   btnDropdown: document.querySelector('.dropdown__content'),
   btnContent: document.querySelectorAll('.dropdown__content__btn'),
@@ -37,7 +38,7 @@ function onAlphabetClick(e) {
 
   preloader();
 
-  timerId = setTimeout(getCoctails, 2000);
+  timerId = setTimeout(getCoctails, 1000);
 }
 
 clearTimeout(timerId);

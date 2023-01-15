@@ -58,20 +58,20 @@
 
 		color: var(--accent-text-color);
 
-		width: 300px;
 		margin-bottom: 40px;
 
 		@media screen and (max-width: $pre-tablet) {
 			margin-bottom: 60px;
 			margin-left: auto;
 			margin-right: auto;
+
+			max-width: 336px;
+			height: 100%;
 		}
 
 		@media screen and (min-width: $tablet) {
 			font-size: 26px;
 			line-height: 1.6;
-
-			width: 336px;
 		}
 
 		@media screen and (min-width: $desctop) {
@@ -85,7 +85,7 @@
 
 .baner-wrapper {
 	@media screen and (max-width: $pre-tablet) {
-		width: 260px;
+		max-width: 260px;
 		height: 245px;
 
 		background-position: center;
@@ -125,6 +125,7 @@
 }
 
 .ABC-input {
+	position: relative;
 	width: 93px;
 	height: 34px;
 
@@ -136,24 +137,20 @@
 	font-weight: 700;
 	font-size: 16px;
 	line-height: 2.2;
-
-	display: block;
 }
 
-.dropdown-wrapper {
+.dropdown {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	// margin-bottom: 40px;
+	width: 93px;
+	height: 34px;
 	display: none;
 
 	@media screen and (max-width: $pre-tablet) {
 		display: block;
-		margin-bottom: 55px;
 	}
-}
-
-.dropdown {
-	position: absolute;
-	text-align: center;
-	left: 50%;
-	transform: translate(-50%);
 
 	&__btn {
 		position: absolute;
@@ -174,16 +171,16 @@
 }
 
 .dropdown__content {
+	display: block;
 	width: 93px;
 	height: 84px;
+	margin-left: auto;
+	margin-right: auto;
 
 	border: 1px solid var(--accent-text-color);
 	border-radius: 4px;
 	background-color: var(--main-white-color);
 
-	display: none;
-	position: absolute;
-	z-index: 1;
 	overflow: scroll;
 
 	&__btn {
@@ -202,6 +199,8 @@
 		display: block;
 		border: none;
 
+		color: var(--alternative-text-color);
+
 		transition: color var(--general-transition-effect);
 
 		&:hover,
@@ -209,6 +208,10 @@
 			color: var(--accent-text-color);
 		}
 	}
+}
+
+.is-hidden{
+	display: none;
 }
 
 .btn-ABC {

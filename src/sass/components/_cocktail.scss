@@ -1,5 +1,6 @@
 .cocktails {
   padding-bottom: 60px;
+  min-height: 525px;
 }
 
 .cocktail-title {
@@ -35,12 +36,12 @@
 .error-wrapper__img {
   margin: 0 auto;
 
-  max-width: 280;
-  max-height: 208;
+  max-width: 280px;
+  max-height: 308px;
 
   @media screen and (min-width: $tablet) {
-    max-width: 345;
-    max-height: 380;
+    max-width: 345px;
+    max-height: 380px;
   }
 }
 

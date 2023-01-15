@@ -13,29 +13,30 @@ let identificator = '';
 let type = '';
 let timerId = '';
 
-refs.inputBtn.addEventListener('click', onInputClick);
+dropdownHidden();
+
+refs.dropdown.addEventListener('click', onInputClick);
 refs.btnDropdown.addEventListener('click', onbtnDropdownClick);
 
 function onInputClick(e) {
   e.preventDefault();
-  refs.btnDropdown.style.display = 'block';
+  dropdownHidden();
 }
 
 function onbtnDropdownClick(e) {
-  e.preventDefault;
+  refs.dropdown.style.marginBottom = '0px';
   refs.mainSection.innerHTML = '';
-  hiddenTitle();
 
   const element = e.target.textContent;
   identificator = 'f=';
   type = 'search';
-  inputValue = element;
 
   inputChange(element);
 
   preloader();
+  refs.dropdown.style.marginBottom = '0px';
 
-  timerId = setTimeout(getCoctails, 2000);
+  timerId = setTimeout(getCoctails, 1000);
 }
 
 clearTimeout(timerId);
@@ -64,12 +65,25 @@ async function getCoctails() {
 }
 
 function inputChange(element) {
+  refs.dropdown.style.marginBottom = '5px';
+  dropdownHidden();
   inputValue = element;
   refs.inputDropdown.value = element;
-
   refs.inputDropdown.style.backgroundColor = 'var(--accent-text-color)';
   refs.inputDropdown.style.color = 'var(--main-white-color)';
   refs.icon.style.fill = 'var(--main-white-color)';
-
-  refs.btnDropdown.style.display = 'none';
+  dropdownHidden();
+  refs.dropdown.style.marginBottom = '5px';
 }
+
+function dropdownHidden() {
+  refs.btnDropdown.classList.toggle('is-hidden');
+ 
+  if (refs.btnDropdown.classList.contains('is-hidden')){
+    refs.dropdown.style.marginBottom = '0px';
+  }else{
+    refs.dropdown.style.marginBottom = '55px';
+  }
+  return;
+}
+

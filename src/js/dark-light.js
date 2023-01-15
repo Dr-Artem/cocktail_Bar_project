@@ -2,6 +2,12 @@ let checkbox = document.getElementById('checkbox');
 let ballEl = document.querySelector('.ball');
 let modal = document.querySelector('.modal');
 let menu = document.querySelector('.header__menu');
+const footerLinks = document.querySelectorAll('.sosial_links__icon');
+const devLogo = document.querySelector('.dev__logo');
+const footerTitle = document.querySelectorAll('.footer-title');
+const btnDrop = document.querySelectorAll('.dropdown__content__btn')
+
+console.log(btnDrop);
 
 if (localStorage.getItem('darkMode') === 'true') {
   checkbox.checked = true;
@@ -9,6 +15,7 @@ if (localStorage.getItem('darkMode') === 'true') {
   document.body.classList.add('dark');
   modal.classList.add('dark');
   menu.classList.add('dark');
+  footerAddChange();
 }
 
 function handleDarkMode() {
@@ -18,13 +25,41 @@ function handleDarkMode() {
     modal.classList.add('dark');
     menu.classList.add('dark');
     localStorage.setItem('darkMode', 'true');
+    footerAddChange();
   } else {
     modal.classList.remove('dark');
     ballEl.classList.remove('dark');
     menu.classList.remove('dark');
+    footerRemoveChange();
     document.body.classList.remove('dark');
     localStorage.setItem('darkMode', 'false');
   }
+}
+
+function footerAddChange() {
+  footerLinks.forEach(link => {
+    link.classList.add('sosial_links__icon--dark');
+  });
+  footerTitle.forEach(title => {
+    title.classList.add('footer-title--dark')
+  });
+  btnDrop.forEach(btn => {
+    btn.classList.add('dropdown__content__btn--dark')
+  });
+  devLogo.classList.add('dev__logo--dark');
+}
+
+function footerRemoveChange() {
+  footerLinks.forEach(link => {
+    link.classList.remove('sosial_links__icon--dark');
+  });
+  footerTitle.forEach(title => {
+    title.classList.remove('footer-title--dark')
+  });
+  btnDrop.forEach(btn => {
+    btn.classList.remove('dropdown__content__btn--dark')
+  });
+  devLogo.classList.remove('dev__logo--dark');
 }
 
 checkbox.addEventListener('change', handleDarkMode);
