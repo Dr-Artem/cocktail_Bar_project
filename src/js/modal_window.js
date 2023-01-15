@@ -26,13 +26,15 @@ function openModalWindow(el) {
       );
 
       const ingridientList = document.querySelector('.ingridients__list');
+      console.log(response.drinks[0]);
 
       for (let i = 0; i < 15; i++) {
         const ingridient = response.drinks[0][`strIngredient${i}`];
+        const strMeasure = response.drinks[0][`strMeasure${i}`];
         if (ingridient) {
           ingridientList.insertAdjacentHTML(
             'beforeend',
-            `<li> <a class="ingridients__link" name='${ingridient}'>&#10038${ingridient}</a></li>`
+            `<li> <a class="ingridients__link" name='${ingridient}'>✶ ${strMeasure}${ingridient}</a></li>`
           );
         }
       }
