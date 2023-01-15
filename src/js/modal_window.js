@@ -2,6 +2,7 @@ import modalWindowAdd from '../templates/modal.hbs';
 import modalWindowIngredient from '../templates/renderIngridientInfo.hbs';
 import { fetchApi } from './fetchApi';
 import { params } from '..';
+import favIngredient from '../templates/favourite-ingredient.hbs'
 
 const backdrop = document.querySelector('.backdrop');
 const backdropIngridient = document.querySelector('.backdrop-ingridient');
@@ -9,6 +10,9 @@ const backdropIngridient = document.querySelector('.backdrop-ingridient');
 const modalWindow = document.querySelector('[data-modal]');
 const modalWindowIngridient = document.querySelector('[data-ingridient]');
 const modal = document.querySelector('[data-modal]');
+
+
+const favouriteIngredientSection = document.querySelector('.fav-list');
 
 function openModalWindow(el) {
     let inputValue = el.target.id;
@@ -53,7 +57,7 @@ function openModalWindow(el) {
             for (let i = 1; i <= 15; i++) {
                 const ingridient = response.drinks[0][`strIngredient${i}`];
                 if (ingridient) {
-                    ingridientList.innerHTML = `<li> <a class="ingridients__link" name='${ingridient}'>&#10038${ingridient}</a></li>`;
+                    ingridientList.insertAdjacentHTML("beforeend", `<li> <a class="ingridients__link" name='${ingridient}'>&#10038${ingridient}</a></li>`);
                 }
             }
             backdrop.classList.remove('hidden');
@@ -77,27 +81,84 @@ function openIngridientModalWindow(el) {
     let inputValue = el.target.name;
     let identificator = 'i=';
     let type = 'search';
+	let localKeys = [];
+	for (const key in localStorage) {
+        localKeys.push(key);
+    }
     fetchApi(type, identificator, inputValue).then(response => {
-        if (el.target.nodeName !== 'A') {
-            return;
-        }
+		
+        // if (el.target.nodeName !== 'A') {
+        //     return;
+        // }
         if (!response.ingredients[0].strDescription) {
             return;
         }
+		const ingredientId = response.ingredients[0].idIngredient;
+		console.log(ingredientId);
         modalWindowIngridient.innerHTML = modalWindowIngredient(response.ingredients);
 
         backdrop.classList.add('hidden');
-        backdropIngridient.classList.remove('hidden');
+		backdropIngridient.classList.remove('hidden');
+		
+		let favouriteBtnIngredient = modalWindowIngridient.querySelector('.ingredient__btn');
+		if (localKeys.includes(ingredientId)) {
+			favouriteBtnIngredient.textContent = 'Remove from favourite';
+		}
 
-        let favouriteBtnIngredient = document.querySelector('.ingredient__btn');
-        favouriteBtnIngredient.onclick = function (params) {};
+        
+        favouriteBtnIngredient.onclick = function () {
+			if (localKeys.includes(ingredientId)) {
+				localStorage.removeItem(`strIngredient${ingredientId}`);
+                    favouriteBtnIngredient.textContent = 'Add to favourite';
+                    localIndex = localKeys.indexOf(`strIngredient${ingredientId}`);
+                    localKeys.splice(localIndex, 1);
+			}
+			else {
+				let param =JSON.stringify(response.ingredients[0])
+				localStorage.setItem(`strIngredient${ingredientId}`, param);
+                    localKeys.push(ingredientId);
+                    favouriteBtnIngredient.textContent = 'Remove from favourite';
+			}
+		};
+		const closebtn = document.querySelector('.close-btn')
+		closebtn.onclick = function () {
+			modalWindowIngridient.innerHTML = '';
+			backdropIngridient.classList.add('hidden');
+		}
+	console.log(closebtn);
+
     });
+}
+if (favouriteIngredientSection) {
+	for (let i = 0; i < localStorage.length; i++) {
+        const element = localStorage.key(i);
+        if (element.startsWith('strIngredient')) {
+			const el = localStorage.getItem(element);
+			jsonEl = JSON.parse(el)
+            favouriteIngredientSection.insertAdjacentHTML("beforeend", favIngredient(jsonEl));
+        }
+	}
+	const lernMoreBtn = document.querySelectorAll('.item__btn1')
+	function test(event) {
+		if (event.target.className === 'item__btn1') {
+			openIngridientModalWindow(event)
+		}
+		if (event.target.className === 'item__btn2') {
+			localStorage.removeItem(`strIngredient${event.target.id}`)
+			document.location.reload()
+			// console.log(event.target.id)
+			
+		}
+	}
+	
+	favouriteIngredientSection.addEventListener('click', test)
 }
 
 function closeIngridientModalWindow(el) {
     if (el.target.className.animVal !== 'button__icon__ingredient' && el.target.className !== 'backdrop-ingridient') {
         return;
     }
+	
     modalWindowIngridient.innerHTML = '';
 
     backdrop.classList.remove('hidden');
