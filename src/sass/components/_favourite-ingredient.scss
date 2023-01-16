@@ -117,6 +117,7 @@
 	background: var(--accent-button-color);
 	border-radius: 4px;
 	border: none;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
 	@media screen and (min-width: $tablet) and (max-width: $pre-desctop) {
 		font-size: 20px;
@@ -128,6 +129,16 @@
 		line-height: 1.2;
 		padding: 12px 38px 12px 38px;
 	}
+}
+.item__btn1:hover,
+.item__btn1:focus {
+	background-color: var(--main-white-color);
+	color: var(--accent-text-color);
+	filter: none;
+}
+.item__btn1:active {
+	background-color: var(--accent-text-color);
+	color: var(--main-white-color);
 }
 
 .item__btn2 {
@@ -146,7 +157,8 @@
 
 	background: none;
 	color: var(--accent-text-color);
-	border: 1px solid var(--accent-button-color);
+	outline: 2px solid var(--accent-button-color);
+	border: none;
 	border-radius: 4px;
 
 	@media screen and (min-width: $tablet) and (max-width: $pre-desctop) {
@@ -159,6 +171,11 @@
 		line-height: 1.2;
 		padding: 12px 24px 12px 18px;
 	}
+}
+.item__btn2:hover,
+.item__btn2:focus {
+	background-color: var(--main-white-color);
+	outline: 1px solid var(--accent-button-color);
 }
 .fav-list__btn__wrapper {
 	display: flex;

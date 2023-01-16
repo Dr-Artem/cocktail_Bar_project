@@ -28,11 +28,10 @@ function openModalWindow(el) {
                 let cardItem = document.querySelectorAll('.cocktail__item');
                 let itemId = `strDrink${response.drinks[0].idDrink}`;
                 modalWindow.innerHTML = modalWindowAdd(response.drinks);
-                let favouriteBtn = document.querySelector('.ingredient__btn');
+                let favouriteBtn = document.querySelector('.favorite-btn');
                 if (localKeys.includes(favouriteBtn.id)) {
                     favouriteBtn.textContent = 'Remove from favourite';
                 }
-
 
                 favouriteBtn.onclick = function () {
                     if (localKeys.includes(itemId)) {
@@ -40,6 +39,7 @@ function openModalWindow(el) {
                         favouriteBtn.textContent = 'Add to favourite';
                         localIndex = localKeys.indexOf(`${itemId}`);
                         localKeys.splice(localIndex, 1);
+                        document.location.reload();
                     } else {
                         let parentLi;
                         cardItem.forEach(item => {
@@ -81,7 +81,6 @@ function closeModalWindow(el) {
 }
 
 function openIngridientModalWindow(el) {
-    console.log(el.target.name);
     let inputValue = el.target.name;
     let identificator = 'i=';
     let type = 'search';
@@ -90,12 +89,8 @@ function openIngridientModalWindow(el) {
         localKeys.push(key);
     }
 
-    // if (localKeys.includes(favouriteBtnIngredient.id)) {
-    //     favouriteBtnIngredient.textContent = 'Remove from favourite';
-    // }
     fetchApi(type, identificator, inputValue).then(response => {
-        console.log(el.target.nodeName);
-        if (el.target.nodeName !== 'A' && el.target.nodeName !== 'BUTTON') {
+        if (el.target.nodeName !== 'A' && el.target.className !== 'item__btn1') {
             return;
         }
         if (!response.ingredients[0].strDescription) {
@@ -117,6 +112,7 @@ function openIngridientModalWindow(el) {
                 favouriteBtnIngredient.textContent = 'Add to favourite';
                 localIndex = localKeys.indexOf(`strIngredient${ingredientId}`);
                 localKeys.splice(localIndex, 1);
+                document.location.reload();
             } else {
                 let param = JSON.stringify(response.ingredients[0]);
                 localStorage.setItem(`strIngredient${ingredientId}`, param);

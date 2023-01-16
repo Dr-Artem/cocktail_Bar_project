@@ -2,7 +2,6 @@ let checkbox = document.getElementById('checkbox');
 let ballEl = document.querySelector('.ball');
 let modal = document.querySelector('.modal');
 let modalIngredient = document.querySelector('.modal-ingridient');
-console.log(modalIngredient);
 let menu = document.querySelector('.header__menu');
 
 if (localStorage.getItem('darkMode') === 'true') {
