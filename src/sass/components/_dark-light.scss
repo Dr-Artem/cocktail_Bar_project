@@ -56,12 +56,15 @@ body.dark {
 	color: inherit;
 }
 
-.sosial_links__icon,
-.dev__logo {
+.sosial_links__icon--dark,
+.dev__logo--dark {
 	fill: #292c35;
 }
 
-.country__name,
-.dev__name {
+.footer-title--dark {
 	color: black;
+}
+
+.dropdown__content__btn--dark{
+	color: var(--alternative-text-color);
 }
