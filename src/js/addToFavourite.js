@@ -34,16 +34,20 @@ function addRemove(event) {
 if (favouriteCocktailSection) {
     favouriteCocktailSection.addEventListener('click', addRemove);
     for (let i = 0; i < localStorage.length; i++) {
-        console.log(localStorage.key(i));
         const element = localStorage.key(i);
         if (element.startsWith('strDrink')) {
             const el = localStorage.getItem(element);
-            favouriteCocktailSection.insertAdjacentHTML('beforeend', `<li class='cocktail__item'>${el}</li>`);
+            favouriteCocktailSection.insertAdjacentHTML('beforeend', `<li class='cocktail__item' class='${element}'>${el}</li>`);
         }
     }
+    let its = document.querySelectorAll('.buttons__add-to');
+    its.forEach(it => {
+        if (localKeys.includes(it.id)) {
+            it.textContent = 'Remove';
+        }
+    });
 }
 
 if (cocktailSection) {
     cocktailSection.addEventListener('click', addRemove);
 }
-console.log(window.location.href);

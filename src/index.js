@@ -26,10 +26,6 @@ export const refs = {
     ldsHeart: document.querySelector('.preloader'),
 };
 
-// const list = document.querySelector('.favourite-cocktail_list');
-// const modalBackdrop = document.querySelector('.backdrop');
-// const modalIngridientBackdrop = document.querySelector('.backdrop-ingridient');
-
 let inputValue = '';
 let identificator = '';
 let type = '';
@@ -37,7 +33,6 @@ let timerId = '';
 
 async function getApi() {
     const data = await fetchApi(type, identificator, inputValue);
-    console.log(data);
 
     let start = 0;
     let end = 9;
@@ -110,6 +105,16 @@ async function getApi() {
                 }
             }
         }
+        const addBtns = document.querySelectorAll('.buttons__add-to');
+        let localKeys = [];
+        for (const key in localStorage) {
+            localKeys.push(key);
+        }
+        addBtns.forEach(btn => {
+            if (localKeys.includes(btn.id)) {
+                btn.textContent = 'Remove';
+            }
+        });
 
         Notiflix.Notify.success('We found' + ` ${data.drinks.length} ` + 'cocktails for you!');
         scroll();
@@ -124,6 +129,8 @@ function getRandomDrink() {
     identificator = 's=';
     type = 'search';
     timerId = setTimeout(getApi, 2000);
+
+    // getApi();
 }
 
 function onSearchForm(event) {
@@ -140,6 +147,7 @@ function onSearchForm(event) {
     identificator = 's=';
     type = 'search';
     timerId = setTimeout(getApi, 2000);
+    // getApi();
 }
 
 async function onFetchPagiantion(evt) {
@@ -211,6 +219,7 @@ function onAlphabetClick(event) {
     preloader();
 
     timerId = setTimeout(getApi, 2000);
+    // getApi();
 }
 clearTimeout(timerId);
 
@@ -271,12 +280,10 @@ Notiflix.Notify.init({
 refs.btnContent.forEach(btn => {
     btn.style.color = 'inherit';
 });
-if (refs.btnDropdown) {
-    refs.btnDropdown.style.backgroundColor = 'inherit';
-    refs.inputBtn.addEventListener('click', onInputClick);
-    refs.btnDropdown.addEventListener('click', onAlphabetClick);
-    refs.btnAbc.addEventListener('click', onAlphabetClick);
-}
+refs.btnDropdown.style.backgroundColor = 'inherit';
+refs.inputBtn.addEventListener('click', onInputClick);
+refs.btnDropdown.addEventListener('click', onAlphabetClick);
+refs.btnAbc.addEventListener('click', onAlphabetClick);
 
 params.formCurrent.addEventListener('submit', onSearchForm);
 params.formHide.addEventListener('submit', onSearchForm);
