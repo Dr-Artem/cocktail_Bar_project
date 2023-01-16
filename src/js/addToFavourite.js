@@ -1,27 +1,53 @@
-const list = document.querySelector('.favourite-cocktail_list');
-// console.log(localStorage);
+const cocktailSection = document.querySelector('.cocktail__list');
+const favouriteCocktailSection = document.querySelector('.favourite-cocktail__list');
 
-for (let i = 0; i < localStorage.length; i++) {
-  const element = localStorage.key(i);
-  if (element.startsWith('strDrink')) {
-    // console.log(element);
-  }
-
-  const el = localStorage.getItem(element);
-  list.insertAdjacentHTML('beforeend', `<li class='cocktail__item'>${el}</li>`);
+let localKeys = [];
+for (const key in localStorage) {
+    localKeys.push(key);
 }
-const addRemove = document.querySelectorAll('.buttons__add-to');
-addRemove.forEach(btn => {
-  btn.textContent = 'Remove';
-});
-console.log(addRemove);
+function addRemove(event) {
+    const cardItem = document.querySelectorAll('.cocktail__item');
+    if (event.target.className === 'buttons__add-to') {
+        let elementId = event.target.id;
+        if (localKeys.includes(elementId)) {
+            localStorage.removeItem(`${elementId}`);
+            event.target.textContent = 'Add to';
+            localIndex = localKeys.indexOf(`${event.target.id}`);
+            localKeys.splice(localIndex, 1);
+            if (favouriteCocktailSection) {
+                document.location.reload();
+            }
+        } else {
+            let parentLi;
+            cardItem.forEach(item => {
+                if (item.id === elementId) {
+                    parentLi = item.innerHTML;
+                }
+            });
 
-function removeFvourite(event) {
-  if (event.target.className === 'buttons__add-to') {
-    localStorage.removeItem(`strDrink${event.target.id}`);
-    document.location.reload();
-  }
-  console.log(event.target);
+            localStorage.setItem(`${elementId}`, parentLi);
+            localKeys.push(elementId);
+            event.target.textContent = 'Remove';
+        }
+    }
+}
+if (favouriteCocktailSection) {
+    favouriteCocktailSection.addEventListener('click', addRemove);
+    for (let i = 0; i < localStorage.length; i++) {
+        const element = localStorage.key(i);
+        if (element.startsWith('strDrink')) {
+            const el = localStorage.getItem(element);
+            favouriteCocktailSection.insertAdjacentHTML('beforeend', `<li class='cocktail__item' class='${element}'>${el}</li>`);
+        }
+    }
+    let its = document.querySelectorAll('.buttons__add-to');
+    its.forEach(it => {
+        if (localKeys.includes(it.id)) {
+            it.textContent = 'Remove';
+        }
+    });
 }
 
-document.body.addEventListener('click', removeFvourite);
+if (cocktailSection) {
+    cocktailSection.addEventListener('click', addRemove);
+}

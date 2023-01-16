@@ -229,7 +229,8 @@
 		padding: 33px 20px;
 	}
 }
-.header__menu.dark {
+._touch .header__menu.dark {
+	transition: all var(--general-transition-effect);
 	background-color: var(--main-color);
 }
 @media (min-width: 1280px) {

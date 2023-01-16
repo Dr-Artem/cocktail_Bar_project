@@ -90,6 +90,12 @@
     margin: 0;
   }
 }
+.modal-ingridient.dark {
+	background-color: var(--main-color);
+}
+.modal-ingridient.dark .ingredient__title {
+	color: var(--main-white-color);
+}
 
 .flex-wrapper {
   @media screen and (min-width: $tablet) {
