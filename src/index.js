@@ -24,6 +24,7 @@ export const refs = {
     errorImg: document.querySelector('.error-wrapper__img'),
     mainTitle: document.querySelector('.main-title'),
     ldsHeart: document.querySelector('.preloader'),
+    dropdownWrapper: document.querySelector('.dropdown-wrapper'),
 };
 
 let inputValue = '';
@@ -215,10 +216,11 @@ function onAlphabetClick(event) {
     refs.icon.style.fill = 'var(--main-white-color)';
 
     refs.btnDropdown.style.display = 'none';
+    refs.dropdownWrapper.style.marginBottom = '55px';
 
     preloader();
 
-    timerId = setTimeout(getApi, 2000);
+    timerId = setTimeout(getApi, 1000);
     // getApi();
 }
 clearTimeout(timerId);
@@ -226,6 +228,7 @@ clearTimeout(timerId);
 function onInputClick(e) {
     e.preventDefault();
     refs.btnDropdown.style.display = 'block';
+    refs.dropdownWrapper.style.marginBottom = '100px';
 }
 
 export function hiddenTitle() {

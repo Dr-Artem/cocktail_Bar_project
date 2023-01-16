@@ -58,20 +58,20 @@
 
 		color: var(--accent-text-color);
 
-		width: 300px;
 		margin-bottom: 40px;
 
 		@media screen and (max-width: $pre-tablet) {
 			margin-bottom: 60px;
 			margin-left: auto;
 			margin-right: auto;
+
+			max-width: 336px;
+			height: 100%;
 		}
 
 		@media screen and (min-width: $tablet) {
 			font-size: 26px;
 			line-height: 1.6;
-
-			width: 336px;
 		}
 
 		@media screen and (min-width: $desctop) {
@@ -85,7 +85,7 @@
 
 .baner-wrapper {
 	@media screen and (max-width: $pre-tablet) {
-		width: 260px;
+		max-width: 260px;
 		height: 245px;
 
 		background-position: center;
