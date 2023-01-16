@@ -33,6 +33,7 @@ function openModalWindow(el) {
                     favouriteBtn.textContent = 'Remove from favourite';
                 }
 
+
                 favouriteBtn.onclick = function () {
                     if (localKeys.includes(itemId)) {
                         localStorage.removeItem(`${itemId}`);
@@ -56,8 +57,9 @@ function openModalWindow(el) {
 
                 for (let i = 1; i <= 15; i++) {
                     const ingridient = response.drinks[0][`strIngredient${i}`];
+                    const strMeasure = response.drinks[0][`strMeasure${i}`];
                     if (ingridient) {
-                        ingridientList.insertAdjacentHTML('beforeend', `<li> <a class="ingridients__link" name='${ingridient}'>&#10038${ingridient}</a></li>`);
+                        ingridientList.insertAdjacentHTML('beforeend', `<li> <a class="ingridients__link" name='${ingridient}'> ${strMeasure}${ingridient}</a></li>`);
                     }
                 }
                 backdrop.classList.remove('hidden');
