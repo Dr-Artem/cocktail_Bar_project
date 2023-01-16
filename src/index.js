@@ -11,6 +11,8 @@ export const params = {
     formCurrentValue: document.querySelector('.form-current__input'),
     formHideValue: document.querySelector('.form-hide__input'),
     paginationDiv: document.querySelector('.coctail-btn__wrapper'),
+    hero: document.querySelector('.section-hero'),
+    mainsec: document.querySelector('.cocktails'),
 };
 export const refs = {
     btnAbc: document.querySelector('.ABC-search'),
@@ -113,7 +115,8 @@ async function getApi() {
         }
         addBtns.forEach(btn => {
             if (localKeys.includes(btn.id)) {
-                btn.textContent = 'Remove';
+                btn.innerHTML =
+                    "Remove <svg class='buttons__add-to__img' viewBox='0 0 36 32'><path fill='#fd5103'style='fill: var(--color1, #fd5103)' d='M17.882 32l-2.593-2.302c-9.209-8.144-15.289-13.515-15.289-20.107 0-5.371 4.328-9.591 9.835-9.591 3.112 0 6.098 1.413 8.047 3.645 1.949-2.232 4.936-3.645 8.047-3.645 5.508 0 9.835 4.22 9.835 9.591 0 6.592-6.080 11.963-15.289 20.124l-2.593 2.284z' ></path><path fill='#fd5103' style='fill: var(--color2, #fd5103)' d='M17.882 28.631l-2.099-1.817c-7.455-6.429-12.377-10.67-12.377-15.874 0-4.24 3.503-7.572 7.962-7.572 2.519 0 4.936 1.115 6.514 2.877 1.578-1.762 3.995-2.877 6.514-2.877 4.459 0 7.962 3.332 7.962 7.572 0 5.204-4.922 9.444-12.377 15.888l-2.099 1.803z'></path></svg>";
             }
         });
 
@@ -129,7 +132,7 @@ function getRandomDrink() {
     inputValue = alphabet[Math.floor(Math.random() * alphabet.length)];
     identificator = 's=';
     type = 'search';
-    timerId = setTimeout(getApi, 2000);
+    timerId = setTimeout(getApi, 1000);
 
     // getApi();
 }
@@ -147,7 +150,7 @@ function onSearchForm(event) {
 
     identificator = 's=';
     type = 'search';
-    timerId = setTimeout(getApi, 2000);
+    timerId = setTimeout(getApi, 1000);
     // getApi();
 }
 
@@ -224,6 +227,13 @@ function onAlphabetClick(event) {
     // getApi();
 }
 clearTimeout(timerId);
+
+window.onclick = function ({ target }) {
+    if (target == params.hero || target == params.mainsec) {
+        refs.btnDropdown.style.display = 'none';
+        refs.dropdownWrapper.style.marginBottom = '55px';
+    }
+};
 
 function onInputClick(e) {
     e.preventDefault();
