@@ -1,0 +1,70 @@
+body {
+	transition: background var(--general-transition-effect);
+}
+
+body.dark {
+	background-color: var(--main-color);
+	color: var(--main-white-color);
+	fill: var(--main-white-color);
+} /* #9b59b6 */
+
+.checkbox {
+	opacity: 0;
+	position: absolute;
+	border: 1px solid #fd5103;
+}
+
+.checkbox-label {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--accent-text-color);
+	width: 40px;
+	height: 20px;
+
+	border-radius: 20px;
+	position: relative;
+	cursor: pointer;
+}
+
+.checkbox-label .ball {
+	background-color: var(--main-white-color);
+	width: 16px;
+	height: 16px;
+	position: absolute;
+
+	right: 1px;
+	bottom: 2px;
+	left: 1px;
+	border-radius: 50%;
+	transition: transform var(--general-transition-effect);
+}
+
+// .checkbox-label .ball.dark {
+//   left: 0px;
+// }
+
+.checkbox:checked + .checkbox-label .ball {
+	transform: translateX(22px);
+}
+
+// .checkbox:checked + .checkbox-label .ball.dark {
+//   transform: translateX(0px);
+// }
+.cocktail-title,
+.hero__text {
+	color: inherit;
+}
+
+.sosial_links__icon--dark,
+.dev__logo--dark {
+	fill: #292c35;
+}
+
+.footer-title--dark {
+	color: black;
+}
+
+.dropdown__content__btn--dark{
+	color: var(--alternative-text-color);
+}

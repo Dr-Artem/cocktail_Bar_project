@@ -1,0 +1,23 @@
+{{#each this}}
+    <div>
+        <div class='ingredient__title__wrapper'>
+            <h1 class='ingredient__title'>{{strIngredient}}</h1>
+            <h2 class='ingredient__subtitle'>{{strType}}</h2>
+        </div>
+        <p class='ingredient__text'>
+            <span class='ingredient__text__span'>{{strIngredient}}</span>
+            {{strDescription}}
+        </p>
+    </div>
+    <div class='btn__wrapper'>
+        <button class='ingredient__btn' id='strIngredient{{idIngredient}}'>Add to favorite</button>
+        {{! <button class='ingredient__btn hidden'>Remove from favorite</button> }}
+    </div>
+    <button class='close-btn' type='button'>
+        <svg class='button__icon__ingredient' width='18' height='18' viewBox='0 0 36 36'>
+            <path
+                d='M18.228 16l13.1-13.1c0.259-0.302 0.394-0.691 0.379-1.089s-0.18-0.775-0.462-1.056-0.659-0.446-1.056-0.462c-0.398-0.015-0.787 0.12-1.089 0.379l-13.1 13.1-13.1-13.116c-0.298-0.298-0.701-0.465-1.122-0.465s-0.824 0.167-1.122 0.465c-0.298 0.298-0.465 0.701-0.465 1.122s0.167 0.824 0.465 1.122l13.116 13.1-13.116 13.1c-0.165 0.142-0.3 0.316-0.395 0.512s-0.148 0.41-0.157 0.627 0.028 0.435 0.108 0.637c0.079 0.203 0.2 0.387 0.354 0.541s0.338 0.274 0.541 0.354 0.42 0.116 0.637 0.108c0.218-0.008 0.431-0.062 0.627-0.157s0.37-0.229 0.512-0.395l13.116-13.1 13.1 13.1c0.302 0.259 0.691 0.394 1.089 0.379s0.775-0.18 1.056-0.462 0.446-0.659 0.462-1.057c0.015-0.398-0.12-0.787-0.379-1.089l-13.1-13.1z'
+            ></path>
+        </svg>
+    </button>
+{{/each}}

@@ -1,0 +1,47 @@
+<section class="cocktails">
+  <div class="container">
+    <h2 class="cocktail-title main-title">Cocktails</h2>
+    <h2 class="cocktail-title error-title hidden">
+      Sorry, we didn't find any cocktail for you
+    </h2>
+    <div class="preloader hidden">
+      <div class="lds-heart"><div></div></div>
+    </div>
+    <div class="cocktail">
+      <ul class="cocktail__list"></ul>
+    </div>
+    <picture class="error-wrapper">
+      <source
+        srcset="
+          ./img/main/error-photo-480.webp    1x,
+          ./img/main/error-photo-480@2x.webp 2x
+        "
+        type="image/webp"
+        media="(max-width: 767px)"
+      />
+      <source
+        srcset="
+          ./img/main/error-photo-1280.webp    1x,
+          ./img/main/error-photo-1280@2x.webp 2x
+        "
+        type="image/webp"
+        media="(min-width: 1200px)"
+      />
+      <source
+        srcset="
+          ./img/main/error-photo-768.webp    1x,
+          ./img/main/error-photo-768@2x.webp 2x
+        "
+        type="image/webp"
+        media="(min-width: 768px)"
+      />
+      <img
+        class="error-wrapper__img hidden"
+        src="./img/main/error-photo-1280.png"
+        alt="
+              two people at the table, smiling and waiting for their order, which the waiter brought"
+      />
+    </picture>
+    <div class="coctail-btn__wrapper"></div>
+  </div>
+</section>

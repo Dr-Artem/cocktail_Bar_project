@@ -5,18 +5,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-            rel="stylesheet"
-        />
-		<link rel="stylesheet" href="./sass/index.scss" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="./sass/index.scss" />
         <title>Cocktails</title>
     </head>
     <body>
         <include src="./partials/header.html"></include>
-		<!-- Секція з обраними коктейлями -->
-		<include src="./partials/footer.html"></include>
+        <section class="favourite-cocktail container">
+            <h2 class="fav-ingredients__title">Favourite cocktails</h2>
+            <ul class="favourite-cocktail__list"></ul>
+        </section>
+        <include src="./partials/cocktail-modal.html"></include>
+        <include src="./partials/footer.html"></include>
 
         <script type="module" src="./index.js"></script>
+        <script type="module" src="./js/addToFavourite.js"></script>
+        <script type="module" src="./js/header.js"></script>
+        <script type="module" src="./js/dark-light.js"></script>
+        <script type="module" src="./js/modal_window.js"></script>
     </body>
 </html>

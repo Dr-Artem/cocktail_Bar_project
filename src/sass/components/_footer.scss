@@ -1,0 +1,141 @@
+.footer {
+	width: 100%;
+	height: 110px;
+	background-color: var(--accent-text-color);
+
+	&__container {
+		height: 110px;
+		max-width: 480px;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-top: 20px;
+		padding-bottom: 10px;
+
+		@media screen and (min-width: $tablet) {
+			padding-left: 32px;
+			padding-right: 32px;
+			max-width: 768px;
+		}
+
+		@media screen and (min-width: $desctop) {
+			max-width: 1280px;
+			padding-left: 16px;
+			padding-right: 16px;
+		}
+	}
+}
+
+.sosial_links {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+
+	@media screen and (min-width: $tablet) {
+		gap: 15px;
+	}
+
+	@media screen and (min-width: $desctop) {
+		gap: 20px;
+	}
+
+	&__icon {
+		width: 20px;
+		height: 20px;
+		fill: rgba(255, 255, 255, 0.6);
+		cursor: pointer;
+		transition: fill var(--general-transition-effect);
+
+		&:hover,
+		&:focus {
+			fill: white;
+		}
+
+		@media screen and (min-width: $tablet) {
+			width: 30px;
+			height: 30px;
+		}
+
+		@media screen and (min-width: $desctop) {
+			width: 35px;
+			height: 35px;
+		}
+	}
+}
+
+.info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.country {
+	display: flex;
+	align-items: center;
+
+	font-size: 14px;
+	line-height: 1.5;
+	color: rgba(255, 255, 255, 0.6);
+
+	&__flag {
+		width: 20px;
+		height: 25px;
+
+		margin-right: 10px;
+	}
+
+	&__name {
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 1.2;
+
+		@media screen and (min-width: $tablet) {
+			font-size: 14px;
+			line-height: 1.5;
+		}
+	}
+}
+
+.dev {
+	display: flex;
+	align-items: center;
+
+	&:hover .dev__name,
+	&:focus .dev__name {
+		color: var(--main-white-color);
+	}
+
+	&:hover .dev__logo,
+	&:focus .dev__logo {
+		fill: black;
+	}
+
+	&__name {
+		margin-right: 10px;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 1.2;
+		color: rgba(255, 255, 255, 0.6);
+
+		transition: color var(--general-transition-effect);
+
+		@media screen and (min-width: $tablet) {
+			font-size: 14px;
+			line-height: 1.5;
+		}
+	}
+
+	&__logo {
+		width: 80px;
+		height: 35px;
+		fill: rgba(19, 18, 18, 0.43);
+
+		transition: fill var(--general-transition-effect);
+
+		@media screen and (min-width: $desctop) {
+			width: 100px;
+			height: 45px;
+		}
+	}
+}

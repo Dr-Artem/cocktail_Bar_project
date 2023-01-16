@@ -1,0 +1,120 @@
+<header class="header container">
+  <div class="header__wrapper">
+    <a class="header__logo" href="index.html"
+      ><picture>
+        <source
+          srcset="
+              ./img/header/logo@1x-mob.png 1x
+             ./img/header/logo@2x-mob.png 2x
+            "
+          media="(max-width: 767px)"
+          type="image/png"
+        />
+        <source
+          srcset="
+            ./img/header/logo@1x-desc.png 1x,
+            ./img/header/logo@2x-desc.png 2x
+          "
+          media="(min-width: 1280px)"
+          type="image/png"
+        />
+        <source
+          srcset="
+            ./img/header/logo@1x-tabl.png 1x,
+            ./img/header/logo@2x-tabl.png 2x
+          "
+          media="(min-width: 768px)"
+          type="image/png"
+        />
+
+        <img
+          class="logo__nav"
+          src="./img/header/logo@1x-desc.png"
+          alt="page-logo"
+        /> </picture
+    ></a>
+    <form class="header__search-form form-hide">
+      <button class="header__search-form-button" type="submit">
+        <svg class="menu__serch-icon" viewBox="0 0 32 32">
+          <path
+            fill="#fd5103"
+            style="fill: var(--color1, #fd5103)"
+            d="M13.333 24c2.367-0.001 4.665-0.793 6.529-2.251l5.861 5.861 1.885-1.885-5.861-5.861c1.459-1.864 2.251-4.163 2.252-6.531 0-5.881-4.785-10.667-10.667-10.667s-10.667 4.785-10.667 10.667c0 5.881 4.785 10.667 10.667 10.667zM13.333 5.333c4.412 0 8 3.588 8 8s-3.588 8-8 8c-4.412 0-8-3.588-8-8s3.588-8 8-8z"
+          ></path>
+        </svg>
+      </button>
+      <input
+        class="header__search-form-input form-hide__input"
+        type="text"
+        autocomplete="off"
+        placeholder="Search..."
+      />
+    </form>
+    <div class="header__menu menu">
+      <div class="menu__test">
+        <nav class="menu__navbar">
+          <ul class="menu__navbar-list">
+            <li><a class="menu__navbar-link" href="index.html">Home</a></li>
+            <li>
+              <a class="menu__navbar-link-favourite">Favourite</a>
+              <svg class="menu__navbar-link-arrow" width="24" height="24">
+                <use href="./img/icon/spite.svg#icon-v"></use>
+              </svg>
+
+              <ul class="menu__navbar-sub-list">
+                <li>
+                  <a
+                    class="menu__navbar-sub-link"
+                    href="./favourite-cocktail.html"
+                    rel="noreferrer noopener nofollow"
+                    >Favorite cocktails</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="menu__navbar-sub-link"
+                    href="./favourite-ingredient.html"
+                    rel="noreferrer noopener nofollow"
+                    >Favorite ingredients</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <form class="header__search-form form-current" id="header__search-form">
+          <button class="header__search-form-button" type="submit">
+            <svg class="menu__serch-icon" viewBox="0 0 32 32">
+              <path
+                fill="#fd5103"
+                style="fill: var(--color1, #fd5103)"
+                d="M13.333 24c2.367-0.001 4.665-0.793 6.529-2.251l5.861 5.861 1.885-1.885-5.861-5.861c1.459-1.864 2.251-4.163 2.252-6.531 0-5.881-4.785-10.667-10.667-10.667s-10.667 4.785-10.667 10.667c0 5.881 4.785 10.667 10.667 10.667zM13.333 5.333c4.412 0 8 3.588 8 8s-3.588 8-8 8c-4.412 0-8-3.588-8-8s3.588-8 8-8z"
+              ></path>
+            </svg>
+          </button>
+          <input
+            class="header__search-form-input form-current__input"
+            type="text"
+            autocomplete="off"
+            placeholder="Search..."
+          />
+        </form>
+        <div class="header__switch">
+          <span>Light</span>
+          <div class="header__switch-wrapper">
+            <input type="checkbox" class="checkbox" id="checkbox" />
+            <label for="checkbox" class="checkbox-label">
+              <span class="ball" id="ball"></span>
+            </label>
+          </div>
+          <span>Dark</span>
+        </div>
+      </div>
+    </div>
+    <div class="menu-icon">
+      <svg style="display: block" width="30" height="16">
+        <use href="./img/icon/spite.svg#icon-menu"></use>
+      </svg>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,166 @@
+// .ingredient {
+//   padding-top: 40px;
+// }
+
+.ingredient__title {
+  font-style: normal;
+  font-family: var(--roboto-alternate-family);
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 1.18;
+  padding-top: 40px;
+
+  color: var(--main-color);
+  margin-left: 20px;
+  @media screen and (min-width: $tablet) and (max-width: $pre-desctop) {
+    margin-left: 28px;
+  }
+  @media screen and (min-width: $desctop) {
+    margin-top: 40px;
+    margin-left: 28px;
+  }
+}
+
+.ingredient__subtitle {
+  font-style: normal;
+  font-weight: var(--poppins-font-weight-600);
+  font-size: 16px;
+  line-height: 1.5;
+
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-left: 20px;
+  @media screen and (min-width: $tablet) and (max-width: $pre-desctop) {
+    margin-left: 28px;
+    margin-top: 28px;
+    padding-bottom: 40px;
+  }
+  @media screen and (min-width: $desctop) {
+    margin-top: 48px;
+    margin-left: 28px;
+    padding-bottom: 40px;
+  }
+}
+.ingredient__title__wrapper {
+  @media screen and (min-width: $tablet) {
+    border-bottom: 1px solid var(--accent-text-color);
+  }
+}
+.ingredient__text {
+  font-style: normal;
+  font-weight: var(--poppins-font-weight-400);
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--alternative-text-color);
+
+  margin-top: 19px;
+  margin-left: 15px;
+  margin-right: 25px;
+  @media screen and (min-width: $tablet) and (max-width: $pre-desctop) {
+    margin-top: 28px;
+    margin-left: 28px;
+  }
+  @media screen and (min-width: $desctop) {
+    margin-top: 28px;
+    margin-left: 28px;
+  }
+  &__span {
+    font-style: normal;
+    font-weight: var(--poppins-font-weight-600);
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--main-color);
+  }
+}
+
+.ingredient__btn {
+  font-family: var(--roboto-alternate-family);
+  font-style: normal;
+  font-weight: var(--roboto-alternate-font-weight-400);
+  font-size: 20px;
+  line-height: 1.2;
+
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  background: var(--accent-text-color);
+  color: var(--main-white-color);
+  border-radius: 4px;
+  border: none;
+
+  &:hover,
+  &:focus {
+    background: var(--main-white-color);
+    color: var(--accent-text-color);
+    cursor: pointer;
+  }
+
+}
+.btn__wrapper {
+  margin-top: 32px;
+  margin-left: 16px;
+
+  @media screen and (min-width: $tablet) and (max-width: $pre-desctop) {
+    margin-top: 40px;
+    margin-right: 28px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  @media screen and (min-width: $tablet) {
+    margin-top: 40px;
+    margin-right: 28px;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.ingredient-btn__close {
+  background-color: inherit;
+  border: none;
+  position: absolute;
+  top: 16;
+  right: 16;
+  @media screen and (min-width: $tablet) {
+    top: 12;
+    right: 12;
+  }
+}
+
+// .ingredient-list {
+//   font-weight: var(--poppins-font-weight-400);
+//   font-style: normal;
+//   font-size: 16px;
+//   line-height: 1.62;
+
+//   color: var(--alternative-text-color);
+
+//   margin-top: 29px;
+//   margin-left: 16px;
+//   margin-right: 38px;
+//   @media screen and (min-width: $tablet) and (max-width: $pre-desctop) {
+//     margin-top: 28px;
+//     margin-left: 28px;
+//   }
+//   @media screen and (min-width: $desctop) {
+//     margin-top: 34px;
+//     margin-left: 28px;
+//   }
+//   &__item:hover,
+//   &__item:focus {
+//     color: var(--accent-button-color);
+//     cursor: pointer;
+//   }
+// }
+
+// .ingredient-list__item::before {
+//   content: '✶';
+//   color: var(--main-color);
+//   margin-right: 4px;
+// }
+
+// .ingredient-list__item:hover::before {
+//   color: var(--accent-button-color);
+// }

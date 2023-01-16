@@ -1,0 +1,198 @@
+.fav-ingredients__title {
+	font-weight: var(--poppins-font-weight-600);
+	font-size: 22px;
+	line-height: 1.91;
+
+	text-align: center;
+
+	color: inherit;
+	margin-bottom: 60px;
+
+	@media screen and (min-width: $tablet) and (max-width: $pre-desctop) {
+		font-family: var(--roboto-alternate-family);
+		font-weight: var(--roboto-alternate-font-weight-700);
+		font-size: 32px;
+		line-height: 1.18;
+
+		text-align: center;
+
+		color: var(--main-color);
+	}
+	@media screen and (min-width: $desctop) {
+		font-weight: var(--poppins-font-weight-600);
+		font-size: 48px;
+		line-height: 1.5;
+	}
+}
+.fav-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: center;
+	padding-bottom: 60px;
+	@media screen and (min-width: $tablet) and (max-width: $pre-desctop) {
+		margin-top: 78px;
+		justify-content: flex-start;
+		gap: 32px;
+	}
+	@media screen and (min-width: $desctop) {
+		justify-content: flex-start;
+		gap: 32px;
+	}
+}
+
+.fav-ingredients__item {
+	flex-basis: 100%;
+	border: 1px solid #fd5103;
+	border-radius: 4px;
+	display: flex;
+	flex-direction: column;
+	@media screen and (min-width: $tablet) {
+		flex-basis: calc((100% - 32px) / 2);
+	}
+	@media screen and (min-width: $desctop) {
+		flex-basis: calc((100% - 32px * 2) / 3);
+	}
+}
+
+.item__title {
+	font-family: var(--roboto-alternate-family);
+	font-style: normal;
+	font-weight: 900;
+	font-size: 26px;
+	line-height: 1.62;
+	padding-left: 20px;
+	padding-top: 20px;
+	color: inherit;
+
+	@media screen and (min-width: $tablet) and (max-width: $pre-desctop) {
+		font-size: 28px;
+		line-height: 1.17;
+	}
+	@media screen and (min-width: $desctop) {
+		font-size: 32px;
+		line-height: 1.18;
+		padding-left: 28px;
+		padding-top: 30px;
+	}
+}
+
+.item__text {
+	font-style: normal;
+	font-weight: var(--poppins-font-weight-600);
+	font-size: 14px;
+	line-height: 1.5;
+
+	text-transform: uppercase;
+
+	padding-left: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	color: var(--alternative-text-color);
+
+	@media screen and (min-width: $tablet) and (max-width: $pre-desctop) {
+		font-size: 16px;
+		padding-left: 28px;
+		padding-top: 28px;
+	}
+	@media screen and (min-width: $desctop) {
+		font-size: 16px;
+		padding-left: 28px;
+		padding-top: 28px;
+	}
+}
+
+.item__btn1 {
+	font-family: var(--roboto-alternate-family);
+	font-style: normal;
+	font-weight: var(--roboto-alternate-font-weight-400);
+	font-size: 14px;
+	line-height: 1.71;
+
+	text-align: center;
+	letter-spacing: 0.02em;
+	padding: 7px 17px 8px 16px;
+
+	color: var(--main-white-color);
+	background: var(--accent-button-color);
+	border-radius: 4px;
+	border: none;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+	@media screen and (min-width: $tablet) and (max-width: $pre-desctop) {
+		font-size: 20px;
+		line-height: 1.2;
+		padding: 12px 27px 12px 27px;
+	}
+	@media screen and (min-width: $desctop) {
+		font-size: 20px;
+		line-height: 1.2;
+		padding: 12px 38px 12px 38px;
+	}
+}
+.item__btn1:hover,
+.item__btn1:focus {
+	background-color: var(--main-white-color);
+	color: var(--accent-text-color);
+	filter: none;
+}
+.item__btn1:active {
+	background-color: var(--accent-text-color);
+	color: var(--main-white-color);
+}
+
+.item__btn2 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	font-family: var(--roboto-alternate-family);
+	font-style: normal;
+	font-weight: var(--roboto-alternate-font-weight-400);
+	font-size: 14px;
+	line-height: 1.71;
+
+	letter-spacing: 0.02em;
+	padding: 7px 10px 8px 15px;
+
+	background: none;
+	color: var(--accent-text-color);
+	outline: 2px solid var(--accent-button-color);
+	border: none;
+	border-radius: 4px;
+
+	@media screen and (min-width: $tablet) and (max-width: $pre-desctop) {
+		font-size: 20px;
+		line-height: 1.2;
+		padding: 12px 14px 12px 10px;
+	}
+	@media screen and (min-width: $desctop) {
+		font-size: 20px;
+		line-height: 1.2;
+		padding: 12px 24px 12px 18px;
+	}
+}
+.item__btn2:hover,
+.item__btn2:focus {
+	background-color: var(--main-white-color);
+	outline: 1px solid var(--accent-button-color);
+}
+.fav-list__btn__wrapper {
+	display: flex;
+	justify-content: space-around;
+	padding-bottom: 20px;
+}
+.fav-svg__icon__heart {
+	fill: var(--accent-text-color);
+	margin-left: 12px;
+	@media screen and (min-width: $tablet) and (max-width: $pre-desctop) {
+		width: 21px;
+		height: 19px;
+		margin-left: 4px;
+	}
+	@media screen and (min-width: $desctop) {
+		width: 21px;
+		height: 19px;
+		margin-left: 4px;
+	}
+}

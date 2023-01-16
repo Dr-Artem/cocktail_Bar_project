@@ -1,0 +1,216 @@
+.cocktail {
+	@media screen and (min-width: $tablet) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 32px;
+	}
+}
+.cocktail__list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 32px;
+	width: 100%;
+}
+
+.cocktail__item {
+	flex-basis: 100%;
+	border: 1px solid #fd5103;
+	border-radius: 4px;
+	display: flex;
+	flex-direction: column;
+	@media screen and (min-width: $tablet) {
+		flex-basis: calc((100% - 32px) / 2);
+	}
+	@media screen and (min-width: $desctop) {
+		flex-basis: calc((100% - 32px * 2) / 3);
+	}
+}
+.cocktail__item:not(:last-child) {
+	@media screen and (max-width: $pre-tablet) {
+		margin: 0 0 20px 0;
+	}
+}
+.cocktail__img-wrapper {
+	margin-bottom: 40px;
+
+	@media screen and (min-width: $tablet) {
+		margin-bottom: 20px;
+	}
+}
+.cocktail__img {
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	width: 100%;
+}
+
+.cocktail__content {
+	padding: 0 21px 24px 21px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex: 1 0 auto;
+	@media screen and (min-width: $tablet) {
+		padding: 0 20px 20px;
+	}
+	@media screen and (min-width: $desctop) {
+		padding: 0 28px 28px;
+	}
+}
+
+.cocktail__name {
+	font-family: "Roboto";
+	font-weight: 900;
+	font-size: 26px;
+	line-height: 42px;
+	text-align: center;
+
+	margin-bottom: 16px;
+
+	@media screen and (min-width: $tablet) {
+		font-size: 28px;
+		line-height: 33px;
+		margin-bottom: 25px;
+	}
+	@media screen and (min-width: $desctop) {
+		font-size: 32px;
+		line-height: 38px;
+		margin-bottom: 27px;
+	}
+}
+
+.buttons {
+	display: flex;
+	justify-content: space-between;
+}
+
+.buttons__learn-more,
+.buttons__add-to {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 110px;
+	width: 100%;
+	padding: 8px 0;
+	cursor: pointer;
+	border-radius: 4px;
+	border: none;
+
+	font-family: var(--roboto-alternate-family);
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 1.71;
+	letter-spacing: 0.02em;
+}
+
+.buttons__learn-more {
+	background-color: var(--accent-button-color);
+	outline: 1px solid #fe7031;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	color: var(--main-white-color);
+
+	@media screen and (min-width: $tablet) {
+		max-width: 160px;
+		padding: 12px 0;
+		font-size: 20px;
+		line-height: 24px;
+	}
+
+	@media screen and (min-width: $desctop) {
+		max-width: 182px;
+	}
+}
+.buttons__learn-more:hover,
+.buttons__learn-more:focus {
+	background-color: var(--main-white-color);
+	color: var(--accent-text-color);
+	outline: none;
+	filter: none;
+}
+.buttons__learn-more:active {
+	color: var(--main-white-color);
+	background-color: var(--accent-text-color);
+}
+
+.buttons__add-to {
+	background-color: transparent;
+	outline: 2px solid var(--accent-text-color);
+	color: var(--accent-text-color);
+
+	@media screen and (min-width: $tablet) {
+		max-width: 123px;
+		padding: 12px 0;
+		font-size: 20px;
+		line-height: 24px;
+	}
+
+	@media screen and (min-width: $desctop) {
+		max-width: 141px;
+	}
+
+	&__img {
+		width: 21px;
+		height: 19px;
+
+		margin-left: 5px;
+	}
+}
+
+.buttons__add-to:hover,
+.buttons__add-to:focus {
+	background-color: var(--main-white-color);
+	outline: 1px solid var(--accent-text-color);
+}
+.buttons__add-to:active {
+	outline: 1px solid var(--accent-text-color);
+}
+
+.coctail-btn__wrapper {
+	padding-top: 45px;
+	padding-bottom: 39px;
+	display: flex;
+	justify-content: center;
+	@media screen and (min-width: $tablet) {
+		padding-top: 32px;
+		padding-bottom: 60px;
+	}
+}
+.btn-pagination {
+	width: 32px;
+	height: 32px;
+
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 1.25;
+	/* identical to box height /
+
+  / Текст */
+
+	color: inherit;
+
+	background: transparent;
+	border-radius: 50px;
+	border: 1px solid #fe7031;
+	@media screen and (min-width: $tablet) and (max-width: $desctop) {
+		width: 40px;
+		height: 40px;
+
+		font-size: 16px;
+		line-height: 1.25;
+	}
+}
+.btn-pagination:active,
+.btn-pagination:focus {
+	background: #fe7031;
+	color: #fcfcfc;
+}
+.btn-pagination:not(:first-child) {
+	margin-left: 8px;
+	@media screen and (min-width: $tablet) and (max-width: $desctop) {
+		margin-left: 27px;
+	}
+	@media screen and (min-width: $desctop) {
+		margin-left: 13px;
+	}
+}
