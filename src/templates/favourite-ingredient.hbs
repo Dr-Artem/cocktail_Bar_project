@@ -1,10 +1,10 @@
-{{#each this}}
+{{#with this}}
   <li class='fav-ingredients__item'>
     <h2 class='item__title'>{{strIngredient}}</h2>
     <p class='item__text'>{{strType}}</p>
     <div class='fav-list__btn__wrapper'>
-      <button class='item__btn1'>Learn more</button>
-      <button class='item__btn2'>
+      <button class='item__btn1' name="{{strIngredient}}">Learn more</button>
+      <button class='item__btn2' id="{{idIngredient}}">
         Remove
         <svg class='fav-svg__icon__heart' viewBox='0 0 19 19'>
           <path
@@ -14,4 +14,4 @@
       </button>
     </div>
   </li>
-{{/each}}
+{{/with}}
