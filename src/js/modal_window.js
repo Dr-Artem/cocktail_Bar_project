@@ -37,7 +37,7 @@ function openModalWindow(el) {
                     if (localKeys.includes(itemId)) {
                         localStorage.removeItem(`${itemId}`);
                         favouriteBtn.textContent = 'Add to favourite';
-                        localIndex = localKeys.indexOf(`${itemId}`);
+                        let localIndex = localKeys.indexOf(`${itemId}`);
                         localKeys.splice(localIndex, 1);
                         document.location.reload();
                     } else {
@@ -110,7 +110,7 @@ function openIngridientModalWindow(el) {
             if (localKeys.includes(ingredientId)) {
                 localStorage.removeItem(`strIngredient${ingredientId}`);
                 favouriteBtnIngredient.textContent = 'Add to favourite';
-                localIndex = localKeys.indexOf(`strIngredient${ingredientId}`);
+                let localIndex = localKeys.indexOf(`strIngredient${ingredientId}`);
                 localKeys.splice(localIndex, 1);
                 document.location.reload();
             } else {
