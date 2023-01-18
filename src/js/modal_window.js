@@ -120,7 +120,7 @@ function openIngridientModalWindow(el) {
                 favouriteBtnIngredient.textContent = 'Remove from favourite';
             }
         };
-        const closebtn = document.querySelector('.close-btn');
+        const closebtn = document.querySelector('.button-icon');
         closebtn.onclick = function () {
             modalWindowIngridient.innerHTML = '';
             backdropIngridient.classList.add('hidden');
@@ -132,7 +132,7 @@ if (favouriteIngredientSection) {
         const element = localStorage.key(i);
         if (element.startsWith('strIngredient')) {
             const el = localStorage.getItem(element);
-            jsonEl = JSON.parse(el);
+            let jsonEl = JSON.parse(el);
             favouriteIngredientSection.insertAdjacentHTML('beforeend', favIngredient(jsonEl));
         }
     }

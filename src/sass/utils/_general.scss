@@ -1,11 +1,11 @@
 html {
 	scroll-behavior: smooth;
+	height: 100vh;
 }
 body {
 	font-family: var(--poppins-family);
 	color: var(--main-color);
 	margin: 0;
-	height: 500px;
 }
 
 ul,
