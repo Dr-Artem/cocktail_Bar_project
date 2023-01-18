@@ -44,6 +44,7 @@ async function getApi() {
 
     try {
         preloader();
+        hiddenTitle();
         if (!data.drinks) {
             addTitle();
             scrollTobottom();
